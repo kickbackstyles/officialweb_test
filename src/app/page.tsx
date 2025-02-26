@@ -1,13 +1,27 @@
+'use client'
 import Footer from '../components/base/Footer/Footer';
 import Header from '../components/base/Header/Header';
 import Button from '../components/button/Button/Button';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState, useEffect } from 'react'
 
 export default function Home(): JSX.Element {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleFunction = () => {
+    setIsMenuOpen((prevState) => !prevState);
+  };
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+  }, [isMenuOpen]);
   return (
     <div>
-      <Header />
+      <Header isMenuOpen={isMenuOpen} isMenuOpenHandler={toggleFunction} />
       <div className='kv'>
 
         <div className='relative h-[161.8vw] w-full'>

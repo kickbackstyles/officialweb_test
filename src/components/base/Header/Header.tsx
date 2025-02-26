@@ -2,14 +2,20 @@
 import Button from '../../button/Button/Button';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { FC, MouseEventHandler } from "react";
 
-const Header = (): JSX.Element => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+type Props = {
+    isMenuOpen: boolean;
+    isMenuOpenHandler: MouseEventHandler;
+};
+
+
+const Header: FC<Props> = ({ isMenuOpen, isMenuOpenHandler }): JSX.Element => {
+
     return (
-        <header>
+        <header className='fixed w-full h-auto z-50'>
             <div className='flex justify-between items-center px-md py-sm bg-white sticky border-b-[2px] border-black z-50'>
-                <div className='flex flex-col gap-xs cursor-pointer' onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                <div className='flex flex-col gap-xs cursor-pointer' onClick={isMenuOpenHandler}>
                     <span className={`${isMenuOpen ? ' rotate-45 translate-y-[1.85vw]' : 'rotate-0'} block w-[5.4vw] h-[2px] bg-black duration-300`}></span>
                     <span className={`${isMenuOpen ? 'opacity-0 ' : 'opacity-1'} block w-[5.4vw] h-[2px] bg-black duration-700`}></span>
                     <span className={`${isMenuOpen ? ' -rotate-45 -translate-y-[1.85vw]' : 'rotate-0'} block w-[5.4vw] h-[2px] bg-black duration-300`}></span>
