@@ -31,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
                         <li><Link href='/items' className={`block text-${color} `} >Items</Link></li>
                         <li><Link href='/gifts' className={`block text-${color} `} >Gifts</Link></li>
                         <li><Link href='/aboutus' className={`block text-${color} `} >AboutUs</Link></li>
-                        <li className='mb-xs'><Link href='/items' className={`block text-${color} `} >Projects</Link></li>
+                        <li className='mb-xs'><Link href='/projects' className={`block text-${color} `} >Projects</Link></li>
                         <div className='w-full'>
                             <Button color={color} href='/' text='Shop' size='' sizePc='sm-pc' className='' />
                         </div>
