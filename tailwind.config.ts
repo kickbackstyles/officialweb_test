@@ -22,6 +22,8 @@ const config: Config = {
 
       },
       spacing: {
+        "xxxxs": "0.31vw",
+        "xxxs": "0.502vw",
         "xxs": "0.8vw",
         "xs": "1.3vw",
         "sm": "2.12vw",
@@ -38,7 +40,10 @@ const config: Config = {
       "xs": "2.3vw",
       "sm": "3.07vw",
       "md": "3.846vw",
-      "lg": "5.64vw"
+      "lg": "5.64vw",
+      "sm-pc": "0.83vw",
+      "md-pc": "1.25vw",
+
     },
     fontFamily: {
       "--font-hn-bold": "var(--hack-nard-Bold)"

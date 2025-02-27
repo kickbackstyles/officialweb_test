@@ -34,8 +34,8 @@ const hackNard = localfont({
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>): JSX.Element {
   return (
-    <html lang='ja'>
-      <body className={`${hackNard.className} text-sm text-black`}>
+    <html lang='ja' className=''>
+      <body className={`${hackNard.className} text-sm text-black sm:text-sm-pc`}>
         <Providers>
           {children}
         </Providers>
