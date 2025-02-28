@@ -23,14 +23,14 @@ const Projects = (): JSX.Element => {
             <div>
                 <div className='flex'>
                     <Link href='/' className='relative block h-5xl w-2/5'>
-                        <Image src='/ebb1ef1a-19b1-4c38-849d-a05bb06b7f95.jpeg' fill objectFit='cover' alt='post 1' />
+                        <Image src='/ebb1ef1a-19b1-4c38-849d-a05bb06b7f95.jpeg' fill style={{ objectFit: 'cover' }} alt='post 1' />
                         <div className='absolute bottom-md sm:bottom-sm left-sm'>
                             <p className='text-white sm:mb-xxxs'>CrowdFunding</p>
                             <p className='text-white hidden sm:block'>クラウドファンディングを開設いたしました。</p>
                         </div>
                     </Link>
                     <Link href='/' className='relative block h-5xl w-3/5'>
-                        <Image src='/7e6ff275-6cd3-4b0b-b487-9ca31dd76a78.jpeg' objectFit='cover' fill alt='post 1' />
+                        <Image src='/7e6ff275-6cd3-4b0b-b487-9ca31dd76a78.jpeg' style={{ objectFit: 'cover' }} fill alt='post 1' />
                         <div className='absolute bottom-md sm:bottom-sm left-sm'>
                             <p className='text-white sm:mb-xxxs'>WinterPopUp</p>
                             <p className='text-white hidden sm:block'>2025.07.11 Open:9:00 ~ Close:15:00</p>
@@ -39,14 +39,14 @@ const Projects = (): JSX.Element => {
                 </div>
                 <div className='flex'>
                     <Link href='/' className='relative block h-5xl w-1/2'>
-                        <Image src='/Words of Affirmation Oversized Lux Hoodie in Cream - Small.jpeg' fill objectFit='cover' alt='post 1' />
+                        <Image src='/Words of Affirmation Oversized Lux Hoodie in Cream - Small.jpeg' fill style={{ objectFit: 'cover' }} alt='post 1' />
                         <div className='absolute bottom-md sm:bottom-sm left-sm'>
                             <p className='text-white sm:mb-xxxs'>CrowdFunding</p>
                             <p className='text-white hidden sm:block'>クラウドファンディングを開設いたしました。</p>
                         </div>
                     </Link>
                     <Link href='/' className='relative block h-5xl w-1/2'>
-                        <Image src='/_Gift Giving_ Oversized Lux Hoodie in Heather Gray.jpeg' objectFit='cover' fill alt='post 1' />
+                        <Image src='/_Gift Giving_ Oversized Lux Hoodie in Heather Gray.jpeg' style={{ objectFit: 'cover' }} fill alt='post 1' />
                         <div className='absolute bottom-md sm:bottom-sm left-sm'>
                             <p className='text-white sm:mb-xxxs'>WinterPopUp</p>
                             <p className='text-white hidden sm:block'>2025.07.11 Open:9:00 ~ Close:15:00</p>
@@ -55,14 +55,14 @@ const Projects = (): JSX.Element => {
                 </div>
                 <div className='flex'>
                     <Link href='/' className='relative block h-5xl w-3/5'>
-                        <Image src='/Endless Summer Club T-Shirt Ocean Blue Special Edition.jpeg' fill objectFit='cover' alt='post 1' />
+                        <Image src='/Endless Summer Club T-Shirt Ocean Blue Special Edition.jpeg' fill style={{ objectFit: 'cover' }} alt='post 1' />
                         <div className='absolute bottom-md sm:bottom-sm left-sm'>
                             <p className='text-white sm:mb-xxxs'>WinterPopUp</p>
                             <p className='text-white hidden sm:block'>2025.07.11 Open:9:00 ~ Close:15:00</p>
                         </div>
                     </Link>
                     <Link href='/' className='relative block h-5xl w-2/5'>
-                        <Image src='/Hike it liked it tee _ Indy Brand Clothing.jpeg' objectFit='cover' fill alt='post 1' />
+                        <Image src='/Hike it liked it tee _ Indy Brand Clothing.jpeg' style={{ objectFit: 'cover' }} fill alt='post 1' />
                         <div className='absolute bottom-md sm:bottom-sm left-sm'>
                             <p className='text-white sm:mb-xxxs'>WinterPopUp</p>
                             <p className='text-white hidden sm:block'>2025.07.11 Open:9:00 ~ Close:15:00</p>
@@ -73,7 +73,7 @@ const Projects = (): JSX.Element => {
             </div>
             <div className='sec-aboutus'>
                 <div className='relative w-full h-[161.8vw] sm:h-[48vw] flex justify-center items-center'>
-                    <Image src='/8b6cffdc-f393-4aba-8ee6-0af39c815a3a.png' fill objectFit='cover' alt='aboutus image' />
+                    <Image src='/8b6cffdc-f393-4aba-8ee6-0af39c815a3a.png' fill style={{ objectFit: 'cover' }} alt='aboutus image' />
                     <div className=' absolute z-10 flex flex-col gap-md'>
                         <Image src='/IMG_2467-removebg.png' width={500} height={500} alt='with all my love' className='w-[86vw] sm:w-5xl h-auto mb-md sm:mb-sm' />
                         <div className='w-[50vw] mx-auto sm:flex sm:justify-center sm:gap-xl'>

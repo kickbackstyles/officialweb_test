@@ -1,4 +1,4 @@
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from 'next';
 import './globals.css';
 import { Providers } from '../../providers';
@@ -36,6 +36,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang='ja' className=''>
       <body className={`${hackNard.className} text-sm text-black sm:text-sm-pc`}>
+        <SpeedInsights />
         <Providers>
           {children}
         </Providers>

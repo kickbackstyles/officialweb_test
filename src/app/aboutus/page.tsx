@@ -34,7 +34,7 @@ const AboutUs = (): JSX.Element => {
             </div>
             <div className='sec-projects'>
                 <div className='relative w-full h-[161.8vw] sm:h-[48vw]'>
-                    <Image src='/_ (1) 20.41.41.jpeg' fill objectFit='cover' alt='projects background image' />
+                    <Image src='/_ (1) 20.41.41.jpeg' fill style={{ objectFit: 'cover' }} alt='projects background image' />
                     <div className='absolute left-md bottom-2xl sm:bottom-lg'>
                         <h2 className='text-lg sm:text-md-pc text-white mb-xl sm:mb-sm'>Projects</h2>
                         <p className='text-white mb-md sm:mb-xs leading-md mr-xl sm:w-4xl'>
