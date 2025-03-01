@@ -28,7 +28,7 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
                         <Image src='/shopping-bag-svgrepo-com.svg' fill alt='shopping bag' />
                     </div>
                     <ul className='sm:flex flex-col items-end gap-xxxs hidden sm:fixed sm:top-md sm:right-md'>
-                        <li><Link href='/items' className={`block text-${color} `} >Items</Link></li>
+                        <li><Link href='/items' className={`block text-${color} ${color === 'white' ? 'hover:text-black' : 'hover:text-white'}`} >Items</Link></li>
                         <li><Link href='/gifts' className={`block text-${color} `} >Gifts</Link></li>
                         <li><Link href='/aboutus' className={`block text-${color} `} >AboutUs</Link></li>
                         <li className='mb-xs'><Link href='/projects' className={`block text-${color} `} >Projects</Link></li>
