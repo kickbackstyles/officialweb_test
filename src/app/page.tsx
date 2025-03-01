@@ -12,7 +12,7 @@ export default function Home(): JSX.Element {
       <Header />
       <div className='kv'>
 
-        <div className='relative h-[154vw] w-full sm:h-5xl'>
+        <div className='relative h-[161.8vw] w-full sm:h-5xl'>
           <Image src='/7e6ff275-6cd3-4b0b-b487-9ca31dd76a78.jpeg' fill style={{ objectFit: 'cover' }} alt='key visual' />
           <div className='absolute left-md bottom-2xl '>
 
