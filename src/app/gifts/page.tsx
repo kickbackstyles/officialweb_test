@@ -1,23 +1,26 @@
-import Footer from '../../components/base/Footer/Footer';
-import Header from '../../components/base/Header/Header';
-import React from 'react';
-import Image from 'next/image';
-
-
+import Image from 'next/image'
+import Footer from '../../components/base/Footer/Footer'
+import Header from '../../components/base/Header/Header'
 
 const Gifts = (): JSX.Element => {
-    return (
-        <div>
-            <Header color='black' />
-            <div className='h-screen w-full flex justify-center items-center flex-col'>
-                <div className='relative w-2xl h-2xl mb-xl sm:mb-md sm:w-lg sm:h-lg'>
-                    <Image src='/kbs_logo.png' width={200} height={200} alt='KickBackStyles logo' className='w-full h-auto' />
-                </div>
-                <h2 className='text-lg sm:text-md-pc text-black'>ComingSoon...!</h2>
-            </div>
-            <Footer />
+  return (
+    <div>
+      <Header color="black" />
+      <div className="flex h-screen w-full flex-col items-center justify-center">
+        <div className="relative mb-xl size-2xl sm:mb-md sm:size-lg">
+          <Image
+            src="/kbs_logo.png"
+            width={200}
+            height={200}
+            alt="KickBackStyles logo"
+            className="h-auto w-full"
+          />
         </div>
-    );
-};
+        <h2 className="text-lg text-black sm:text-md-pc">ComingSoon...!</h2>
+      </div>
+      <Footer />
+    </div>
+  )
+}
 
-export default Gifts;
+export default Gifts

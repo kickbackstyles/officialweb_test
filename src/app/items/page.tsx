@@ -1,130 +1,167 @@
-import Footer from '../../components/base/Footer/Footer';
-import Header from '../../components/base/Header/Header';
-import React from 'react';
-import Ukv from '../../components/base/Ukv/Ukv';
-import Link from 'next/link';
-import Image from 'next/image';
-import Button from '../../components/button/Button/Button';
+import { PrismaClient } from '@prisma/client'
+import Image from 'next/image'
+import Link from 'next/link'
+import AboutSection from '../../components/base/AboutSection/AboutSection'
+import Footer from '../../components/base/Footer/Footer'
+import Header from '../../components/base/Header/Header'
+import ProjectsSection from '../../components/base/ProjectsSection/ProjectsSection'
+import Ukv from '../../components/base/Ukv/Ukv/Ukv'
 
+const prisma = new PrismaClient()
 
-const Items = (): JSX.Element => {
-    return (
-        <div>
-            <Header color='black' />
-            <Ukv src='/1547060693b9e054197a44aaa07a680d.jpg' imgPosition='bottom-0' itemsPage={true} title='Items' />
-            <div className='mt-3xl mb-xl ml-md flex gap-xl sm:hidden'>
-                <h2 className='text-md font-bold mb-md'>Items</h2>
-                <ul className='flex flex-col gap-md'>
-                    <li>
-                        <Link href='/items?=newarrivals' className=''>NewArrivals</Link>
-                    </li>
-                    <li>
-                        <Link href='/items?=gifts' className=''>Gifts</Link>
-                    </li>
-                    <li>
-                        <Link href='/items?=women' className=''>Women</Link>
-                    </li>
-                    <li>
-                        <Link href='/items?=men' className=''>Men</Link>
-                    </li>
-                    <li>
-                        <Link href='/items?=accessories' className=''>Accessories</Link>
-                    </li>
-                </ul>
-            </div>
-            <div className=''>
-                <ul className='flex flex-wrap'>
-                    <li className='bg-white w-1/2 sm:w-[calc(100%/3)] h-[72.8vw] sm:h-[44.41vw] relative flex items-center border-black border-y-[1px] border-r-1'>
-                        <Link href='/items' className='sm:h-full sm:w-full sm:flex sm:justify-center sm:items-center'>
-                            <Image src='/ESSENTIALS Hoodie - Gray _ US L.jpeg' width={400} height={400} sizes='100vw' style={{ objectFit: 'cover' }} alt='item 1' className='w-full h-auto' />
-                            <div className='absolute left-sm bottom-xs'>
-                                <p className='text-sm sm:text-sm-pc text-black leading-md'>BackTextLongSleeve</p>
-                                <p>¥4,500</p>
-                            </div>
-                        </Link>
-                    </li>
-                    <li className='bg-white w-1/2 sm:w-[calc(100%/3)] h-[72.8vw] sm:h-[44.41vw] relative flex items-center border-black border-y-[1px] sm:border-r-1'>
-                        <Link href='/items' className='sm:h-full sm:w-full sm:flex sm:justify-center sm:items-center'>
-                            <Image src='/ESSENTIALS Hoodie - Gray _ US L.jpeg' width={400} height={400} sizes='100vw' style={{ objectFit: 'cover' }} alt='item 1' className='w-full h-auto' />
-                            <div className='absolute left-sm bottom-xs'>
-                                <p className='text-sm sm:text-sm-pc text-black leading-md'>BackTextLongSleeve</p>
-                                <p>¥4,500</p>
-                            </div>
-                        </Link>
-                    </li>
-                    <li className='bg-white w-1/2 sm:w-[calc(100%/3)] h-[72.8vw] sm:h-[44.41vw] relative flex items-center border-black border-b-1 sm:border-y-1 border-r-1'>
-                        <Link href='/items' className='sm:h-full sm:w-full sm:flex sm:justify-center sm:items-center'>
-                            <Image src='/ESSENTIALS Hoodie - Gray _ US L.jpeg' width={400} height={400} sizes='100vw' style={{ objectFit: 'cover' }} alt='item 1' className='w-full h-auto' />
-                            <div className='absolute left-sm bottom-xs'>
-                                <p className='text-sm sm:text-sm-pc text-black leading-md'>BackTextLongSleeve</p>
-                                <p>¥4,500</p>
-                            </div>
-                        </Link>
-                    </li>
-                    <li className='bg-white w-1/2 sm:w-[calc(100%/3)] h-[72.8vw] sm:h-[44.41vw] relative flex items-center border-black border-b-1 sm:border-r-1'>
-                        <Link href='/items' className='sm:h-full sm:w-full sm:flex sm:justify-center sm:items-center'>
-                            <Image src='/ESSENTIALS Hoodie - Gray _ US L.jpeg' width={400} height={400} sizes='100vw' style={{ objectFit: 'cover' }} alt='item 1' className='w-full h-auto' />
-                            <div className='absolute left-sm bottom-xs'>
-                                <p className='text-sm sm:text-sm-pc text-black leading-md'>BackTextLongSleeve</p>
-                                <p>¥4,500</p>
-                            </div>
-                        </Link>
-                    </li>
-                    <li className='bg-white w-1/2 sm:w-[calc(100%/3)] h-[72.8vw] sm:h-[44.41vw] relative flex items-center border-black border-b-1 border-r-1'>
-                        <Link href='/items' className='sm:h-full sm:w-full sm:flex sm:justify-center sm:items-center'>
-                            <Image src='/ESSENTIALS Hoodie - Gray _ US L.jpeg' width={400} height={400} sizes='100vw' style={{ objectFit: 'cover' }} alt='item 1' className='w-full h-auto' />
-                            <div className='absolute left-sm bottom-xs'>
-                                <p className='text-sm sm:text-sm-pc text-black leading-md'>BackTextLongSleeve</p>
-                                <p>¥4,500</p>
-                            </div>
-                        </Link>
-                    </li>
-                    <li className='bg-white w-1/2 sm:w-[calc(100%/3)] h-[72.8vw] sm:h-[44.41vw] relative flex items-center border-black border-b-1'>
-                        <Link href='/items' className='sm:h-full sm:w-full sm:flex sm:justify-center sm:items-center'>
-                            <Image src='/ESSENTIALS Hoodie - Gray _ US L.jpeg' width={400} height={400} sizes='100vw' style={{ objectFit: 'cover' }} alt='item 1' className='w-full h-auto' />
-                            <div className='absolute left-sm bottom-xs'>
-                                <p className='text-sm sm:text-sm-pc text-black leading-md'>BackTextLongSleeve</p>
-                                <p>¥4,500</p>
-                            </div>
-                        </Link>
-                    </li>
-                </ul>
-            </div>
-            <div className='sec-aboutus'>
-                <div className='relative w-full h-[161.8vw] sm:h-[48vw] flex justify-center items-center'>
-                    <Image src='/8b6cffdc-f393-4aba-8ee6-0af39c815a3a.png' fill style={{ objectFit: 'cover' }} alt='aboutus image' />
-                    <div className=' absolute z-10 flex flex-col gap-md'>
-                        <Image src='/IMG_2467-removebg.png' width={500} height={500} alt='with all my love' className='w-[86vw] sm:w-5xl h-auto mb-md sm:mb-sm' />
-                        <div className='w-[50vw] mx-auto sm:flex sm:justify-center sm:gap-xl'>
-                            <Button href='/https://www.instagram.com/kickbackstyles.official?igsh=MTg4NzE5cm5qdG9udQ%3D%3D&utm_source=qr' text='@kickbackstyles.official' color='white' size='sm' sizePc='md-pc' className='mb-lg sm:mb-0 sm:w-2xl' />
-                            <Button href='/aboutus' text='AboutUs' color='white' size='sm' sizePc='md-pc' className='sm:w-2xl' />
-                        </div>
+const getItems = async (searchParams: {
+  [key: string]: string | string[] | undefined
+}) => {
+  const paramValue = searchParams['q'] || ''
+  // 配列の場合は最初の要素を使用、文字列の場合はそのまま使用
+  const params =
+    typeof paramValue === 'string' ? paramValue : paramValue[0] || ''
 
-                    </div>
+  if (params !== '') {
+    const items = await prisma.item.findMany({
+      where: {
+        tags: {
+          some: {
+            tag: {
+              title: {
+                contains: params, // searchParamsと同じtitleを持つTagを持つItemを取得
+                mode: 'insensitive', // 大文字小文字を区別しない場合
+              },
+            },
+          },
+        },
+      },
+      // include: {
+      //     tags: true // タグ情報も取得する場合
+      // }
+    })
+    return { items, params }
+  } else {
+    const items = await prisma.item.findMany()
+    return { items, params: '' }
+  }
+}
 
+const Items = async ({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined }
+}) => {
+  const { items, params } = await getItems(searchParams)
+
+  const itemsPage = true
+
+  return (
+    <div>
+      <Header color="black" />
+      <Ukv
+        src="IMG_1263.JPG"
+        srcSp="IMG_1263_SP.JPG"
+        imgPosition="bottom-0"
+        itemsPage={itemsPage}
+        title="Items"
+        q={params}
+      />
+      <div className="mb-xl ml-md mt-3xl flex gap-xl sm:hidden">
+        <h2 className="mb-md text-md font-bold">Items</h2>
+
+        <ul className="flex flex-col gap-md">
+          <li>
+            <Link
+              href="/items?q=newarrivals"
+              className={`${params === 'newarrivals' ? 'font-bold' : ''}`}
+            >
+              NewArrivals
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/items?q=gifts"
+              className={`${params === 'gifts' ? 'font-bold' : ''}`}
+            >
+              Gifts
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/items?q=unisex"
+              className={`${params === 'unisex' ? 'font-bold' : ''}`}
+            >
+              Unisex
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/items?q=women"
+              className={`${params === 'women' ? 'font-bold' : ''}`}
+            >
+              Women
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/items?q=men"
+              className={`${params === 'men' ? 'font-bold' : ''}`}
+            >
+              Men
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/items?q=accessories"
+              className={`${params === 'accessories' ? 'font-bold' : ''}`}
+            >
+              Accessories
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div className="">
+        <ul className="flex flex-wrap">
+          {items.map((item, index) => (
+            <li
+              className={`relative flex h-[72.8vw] w-1/2 items-center border-black bg-white sm:h-[44.41vw] sm:w-[calc(100%/3)] 
+                                ${index === 0
+                  ? 'border-1'
+                  : index === 1
+                    ? 'border-y-1 border-r-1'
+                    : index === 2
+                      ? 'border-b-1 border-r-1 sm:border-y-1 sm:border-r-1'
+                      : index > 2
+                        ? 'border-b-1 border-r-1'
+                        : ''
+                }`}
+              key={index}
+            >
+              <Link
+                href={`/items/${item.id}`}
+                className="w-full sm:flex sm:h-full sm:items-center sm:justify-center"
+              >
+                <Image
+                  src={`/${item.thumbnailImage}`}
+                  width={400}
+                  height={400}
+                  sizes="100vw"
+                  style={{ objectFit: 'cover' }}
+                  alt={item.title}
+                  className="h-auto w-full scale-95"
+                />
+                <div className="absolute bottom-xs left-sm">
+                  <p className="text-sm leading-md text-black sm:text-sm-pc">
+                    {item.title}
+                  </p>
+                  <p>¥{item.price}</p>
                 </div>
-            </div>
-            <div className='sec-projects'>
-                <div className='relative w-full h-[161.8vw] sm:h-[48vw]'>
-                    <Image src='/_ (1) 20.41.41.jpeg' fill style={{ objectFit: 'cover' }} alt='projects background image' />
-                    <div className='absolute left-md bottom-2xl sm:bottom-lg'>
-                        <h2 className='text-lg sm:text-md-pc text-white mb-xl sm:mb-sm'>Projects</h2>
-                        <p className='text-white mb-md sm:mb-xs leading-md mr-xl sm:w-4xl'>
-                            KickBackStyles is dedicated to spreading love to as many people as possible. To achieve this, we organize crowdfunding campaigns and pop-up events.
-                        </p>
-                        <p className='text-white mb-xl sm:mb-md leading-md mr-xl sm:w-4xl'>
-                            KickBackStylesはたくさんの人に愛を届ける活動を行っています。そのためにクラウドファンディングやPopUpを開催しています。
-                        </p>
-                        <div className='w-3xl sm:w-xl'>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <AboutSection />
+      <ProjectsSection />
+      <Footer />
+    </div>
+  )
+}
 
-                            <Button href='/projects' text='ViewMore' color='white' size='sm' sizePc='sm-pc' className='' />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <Footer />
-        </div>
-    );
-};
-
-export default Items;
+export default Items
