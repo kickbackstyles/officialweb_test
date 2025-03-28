@@ -92,11 +92,12 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
         <div className="relative hidden h-[144vw] w-full sm:z-10 sm:flex sm:h-[48vw] sm:w-5xl sm:items-center sm:justify-center sm:overflow-hidden">
           <CldImage
             src={`${getOptimizedImageUrl(selectedImages[0].url, 1440)}`}
-            width={900}
-            height={900}
+            width={1440}
+            height={1440}
             alt="key visual"
             className={`sm:absolute sm:h-auto sm:w-full ${imgPosition} `}
             style={{ objectFit: 'cover' }}
+            priority
           />
         </div>
 
@@ -117,7 +118,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
                   <SplideSlide key={index}>
                     {/* 画像は縦より横の方が大きく切る */}
                     <img
-                      src={`${image.url}`}
+                      src={`${getOptimizedImageUrl(image.url, 500)}`}
                       className="h-full object-cover"
                       alt={image.alt}
                     />
@@ -161,7 +162,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
                   tabIndex={index}
                 >
                   <CldImage
-                    src={`${color.images[0].url}`}
+                    src={`${getOptimizedImageUrl(color.images[0].url, 300)}`}
                     width={300}
                     height={400}
                     style={{ objectFit: 'cover' }}
@@ -211,7 +212,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
                     tabIndex={index}
                   >
                     <CldImage
-                      src={`${color.images[0].url}`}
+                      src={`${getOptimizedImageUrl(color.images[0].url, 300)}`}
                       width={300}
                       height={300}
                       style={{ objectFit: 'cover' }}
@@ -239,7 +240,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
                     className={`${index === 0 ? 'hidden' : ''} relative flex w-[46vw] items-center border-y-1 border-r-1 border-black bg-white sm:h-4xl sm:w-1/2 sm:overflow-hidden`}
                   >
                     <CldImage
-                      src={`${image.url}`}
+                      src={`${getOptimizedImageUrl(image.url, 500)}`}
                       width={500}
                       height={800}
                       style={{ objectFit: 'cover' }}

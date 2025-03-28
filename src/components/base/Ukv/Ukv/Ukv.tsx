@@ -63,6 +63,7 @@ const Ukv: React.FC<UkvProps> = ({
               alt="key visual"
               className={`absolute left-0 top-0 h-full w-auto sm:block ${imgPosition}`}
               style={{ objectFit: 'cover' }}
+              priority
             />
           </picture>
         </div>
