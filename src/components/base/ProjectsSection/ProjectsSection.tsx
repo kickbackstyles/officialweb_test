@@ -18,14 +18,15 @@ const ProjectsSection = (): JSX.Element => {
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: windowWidth < 640 ? refSp.current : ref.current,
-          start: windowWidth < 640 ? 'top+=10% center' : 'top bottom', // スクロール開始位置
-          end: windowWidth < 640 ? 'bottom-=10% center' : 'bottom-=40% top', // スクロール終了位置
+          trigger: ref.current,
+          start: windowWidth < 640 ? 'top+=10% bottom' : 'top bottom', // スクロール開始位置
+          end: windowWidth < 640 ? 'bottom-=10% top' : 'bottom-=40% top', // スクロール終了位置
           scrub: true, // スクロールに合わせてアニメーションを遅延させる
+
         },
       })
-      .to(windowWidth < 640 ? refSp.current : ref.current, {
-        y: window.innerWidth < 640 ? '+=50' : '+=300',
+      .to(ref.current, {
+        y: window.innerWidth < 640 ? '+=250' : '+=300',
 
         ease: 'none', // イージングなし
       })
@@ -42,20 +43,23 @@ const ProjectsSection = (): JSX.Element => {
               srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_2048,f_auto,q_auto/v1743103658/IMG_1311.JPG_03-26-23-512_ei5det.jpg 2048w,
             https://res.cloudinary.com/dvahtyhva/image/upload/w_1536,f_auto,q_auto/v1743103658/IMG_1311.JPG_03-26-23-512_ei5det.jpg 1536w"
               sizes="100vw"
+
             />
             {/* SP用画像 */}
             <source
               media="(max-width: 639px)"
-              srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_828,f_auto,q_auto/v1743104335/IMG_1311_SP_acmpyn.jpg 828w,
-            https://res.cloudinary.com/dvahtyhva/image/upload/w_640,f_auto,q_auto/v1743104335/IMG_1311_SP_acmpyn.jpg 640w"
+              srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_639,f_auto,q_auto/v1743104335/IMG_1311_SP_acmpyn.jpg 828w,
+            https://res.cloudinary.com/dvahtyhva/image/upload/w_480,f_auto,q_auto/v1743104335/IMG_1311_SP_acmpyn.jpg 640w"
               sizes="100vw"
+
             />
+
             <CldImage
               src="https://res.cloudinary.com/dvahtyhva/image/upload/w_1024,f_auto,q_auto/v1743103658/IMG_1311.JPG_03-26-23-512_ei5det.jpg"
               ref={ref}
               width={2000}
               height={1400}
-              className="sm:scale-120 absolute hidden object-cover sm:top-[-40%] sm:block sm:h-auto sm:w-full"
+              className="absolute object-cover h-full w-auto scale-125 top-[-20%] sm:top-[-50%] sm:block sm:h-auto sm:w-full sm:scale-120"
               alt="projects background image"
               loading="lazy"
             />

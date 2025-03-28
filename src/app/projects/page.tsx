@@ -23,17 +23,17 @@ const getProjects = async (searchParams: {
   const projects = await prisma.project.findMany({
     where: searchParam
       ? {
-          projectTags: {
-            some: {
-              projectTag: {
-                title: {
-                  contains: searchParam, // 文字列として扱う
-                  mode: 'insensitive',
-                },
+        projectTags: {
+          some: {
+            projectTag: {
+              title: {
+                contains: searchParam, // 文字列として扱う
+                mode: 'insensitive',
               },
             },
           },
-        }
+        },
+      }
       : {},
     orderBy: {
       id: 'asc',
@@ -83,7 +83,7 @@ const Projects = async ({
                 src={`${project.thumbnailImageUrl}`}
                 width={1000}
                 height={1000}
-                className="object-cover brightness-90"
+                className="h-full w-auto object-cover brightness-90"
                 alt={project.title}
               />
               <div className="absolute bottom-md left-sm sm:bottom-sm">

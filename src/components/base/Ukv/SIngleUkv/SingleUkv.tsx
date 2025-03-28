@@ -73,17 +73,29 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
   )
   const selectedImages = selectedColor ? selectedColor?.images : []
 
+  const getOptimizedImageUrl = (url: string, width: number) => {
+    try {
+      const baseUrl = url.split('/upload/')[0] + '/upload/';
+      const imagePath = url.split('/upload/')[1];
+      return `${baseUrl}w_${width},f_auto,q_auto/${imagePath}`;
+    } catch (error) {
+      // エラーが発生した場合は元のURLを返す
+      console.error('Error optimizing image URL:', error);
+      return url;
+    }
+  };
+
   return (
     <div>
       <div className="absolute left-0 top-0 z-0 hidden h-[17.01vw] w-full border-b-1 border-black sm:block"></div>
       <div className=" sm:flex sm:items-end">
         <div className="relative hidden h-[144vw] w-full sm:z-10 sm:flex sm:h-[48vw] sm:w-5xl sm:items-center sm:justify-center sm:overflow-hidden">
           <CldImage
-            src={`${selectedImages[0].url}`}
+            src={`${getOptimizedImageUrl(selectedImages[0].url, 1440)}`}
             width={900}
             height={900}
             alt="key visual"
-            className={`sm: h-full w-auto sm:absolute sm:h-auto sm:w-full${imgPosition} `}
+            className={`sm:absolute sm:h-auto sm:w-full ${imgPosition} `}
             style={{ objectFit: 'cover' }}
           />
         </div>
@@ -201,7 +213,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
                     <CldImage
                       src={`${color.images[0].url}`}
                       width={300}
-                      height={400}
+                      height={300}
                       style={{ objectFit: 'cover' }}
                       className="sm:h-auto sm:w-full"
                       alt="color1"

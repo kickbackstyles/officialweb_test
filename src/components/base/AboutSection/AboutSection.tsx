@@ -10,21 +10,22 @@ gsap.registerPlugin(ScrollTrigger)
 
 const AboutSection = (): JSX.Element => {
   const ref = useRef(null)
-  const refSp = useRef(null)
+
   useEffect(() => {
     const windowWidth = window.innerWidth
 
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: windowWidth < 640 ? refSp.current : ref.current,
-          start: windowWidth < 640 ? 'top+=10% center' : 'top+=20% bottom', // スクロール開始位置
-          end: windowWidth < 640 ? 'bottom-=10% center' : 'bottom-=20% top', // スクロール終了位置
+          trigger: ref.current,
+          start: windowWidth < 640 ? 'top+=10% bottom' : 'top+=20% bottom', // スクロール開始位置
+          end: windowWidth < 640 ? 'bottom-=10% top' : 'bottom-=20% top', // スクロール終了位置
           scrub: true, // スクロールに合わせてアニメーションを遅延させる
+
         },
       })
-      .to(windowWidth < 640 ? refSp.current : ref.current, {
-        y: window.innerWidth < 640 ? '+=50' : '+=300',
+      .to(ref.current, {
+        y: window.innerWidth < 640 ? '+=250' : '+=300',
 
         ease: 'none', // イージングなし
       })
@@ -54,7 +55,7 @@ const AboutSection = (): JSX.Element => {
               ref={ref}
               width={2000}
               height={1400}
-              className="absolute hidden object-cover sm:left-auto sm:top-[-30%] sm:block sm:h-auto sm:w-full sm:scale-110"
+              className="absolute object-cover top-[-20%] h-full w-auto scale-125 sm:left-auto sm:top-[-30%] sm:block sm:h-auto sm:w-full sm:scale-110"
               alt="aboutus image"
               loading="lazy"
             />
