@@ -1,4 +1,5 @@
-import Image from 'next/image'
+'use client'
+import { CldImage } from 'next-cloudinary'
 import Footer from '../../components/base/Footer/Footer'
 import Header from '../../components/base/Header/Header'
 import ProjectsSection from '../../components/base/ProjectsSection/ProjectsSection'
@@ -9,8 +10,8 @@ const AboutUs = (): JSX.Element => {
     <div>
       <Header color="black" />
       <Ukv
-        src="IMG_1255.JPG"
-
+        src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743104649/IMG_1255_sshe9q.jpg"
+        srcSp="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103664/IMG_1255_SP.JPG_03-26-23-306_jx94pn.jpg"
         itemsPage={false}
         title="AboutUs"
         english="KickBackStyles is an apparel brand founded on the concept of ‘Spreading Love to Everyone.’ Through fashion, we aim to create heartwarming connections and share positivity with the world."
@@ -30,8 +31,8 @@ const AboutUs = (): JSX.Element => {
       <div className="sm:flex sm:w-full">
         <div className="flex items-center justify-center border-y-1 border-black py-4xl sm:w-1/2 sm:border-r-1 sm:py-0">
           <div className="h-auto w-3xl sm:w-xl">
-            <Image
-              src="/kbs_logo.png"
+            <CldImage
+              src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103638/kbs_logo_wwedmt.png"
               width={200}
               height={200}
               className="h-auto w-full"

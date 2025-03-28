@@ -1,4 +1,5 @@
-import Image from 'next/image'
+'use client'
+import { CldImage } from 'next-cloudinary'
 import Link from 'next/link'
 import AboutSection from '../components/base/AboutSection/AboutSection'
 import Footer from '../components/base/Footer/Footer'
@@ -11,14 +12,14 @@ export default function Home(): JSX.Element {
       <Header />
       <div className="kv">
         <div className="relative h-[161.8vw] w-full sm:h-5xl">
-          <Image
-            src="/IMG_1352.JPG"
+          <CldImage
+            src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103655/IMG_1352.JPG_03-26-23-756_f6in45.jpg"
             fill
-            style={{ objectFit: 'cover' }}
+            className="object-cover"
             alt="key visual"
           />
           <div className="absolute bottom-2xl left-md ">
-            <h1 className="w-3/5 text-md leading-md text-white-pink sm:w-full sm:text-md-pc">
+            <h1 className="w-3/5 text-md leading-md text-white sm:w-full sm:text-md-pc">
               @kickbackstyles.official
               <br />
               2025.04.01 21:00 Releases First Item...!
@@ -29,17 +30,15 @@ export default function Home(): JSX.Element {
       <div className="sec-items sm:flex sm:flex-row-reverse">
         <div className="relative h-[161.8vw] w-full overflow-hidden sm:h-5xl sm:w-1/2">
           <div className="absolute bottom-lg left-md z-10 w-2xl sm:cursor-pointer">
-            <p className="pb-xs text-white sm:pb-xxxxs ">
-              AllItems
-            </p>
+            <p className="pb-xs text-white sm:pb-xxxxs ">AllItems</p>
             <div className="flex items-center gap-xs sm:gap-xxxxs">
               <div className="h-xxs w-full bg-white sm:h-xxxxs"></div>
               <div className="size-xxs bg-white sm:size-xxxxs"></div>
             </div>
           </div>
           <Link href="/items" className="group block size-full">
-            <Image
-              src="/IMG_1344.JPG"
+            <CldImage
+              src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743106008/IMG_1344_rhkg3e.jpg"
               fill
               style={{ objectFit: 'cover' }}
               alt="Section items visual"
@@ -54,24 +53,22 @@ export default function Home(): JSX.Element {
                 href="/items"
                 className="group size-full sm:flex sm:items-center sm:justify-center "
               >
-                <Image
-                  src="/IMG_3220.png"
+                <CldImage
+                  src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103641/IMG_3220_vulr2q.png"
                   width={400}
                   height={400}
                   sizes="100vw"
-                  style={{ objectFit: 'cover' }}
-                  alt="item 1"
-                  className="h-full w-auto scale-90 sm:scale-105 sm:group-hover:hidden"
+                  alt="KickBackStyles ロンT 黒 表"
+                  className="h-full w-auto scale-90 object-cover sm:scale-105 sm:group-hover:hidden"
                 />
                 <div className="hidden size-full overflow-hidden sm:group-hover:block">
-                  <Image
-                    src="/IMG_1248_SP.JPG"
+                  <CldImage
+                    src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103655/IMG_1248_SP.JPG_03-26-23-263_imuuob.jpg"
                     width={400}
                     height={400}
                     sizes="100vw"
-                    style={{ objectFit: 'cover' }}
-                    alt="item 1"
-                    className="sm:h-full sm:w-auto "
+                    alt="KickBackStyles ロンT 黒 裏"
+                    className="object-cover sm:h-full sm:w-auto"
                   />
                 </div>
 
@@ -88,24 +85,22 @@ export default function Home(): JSX.Element {
                 href="/items"
                 className="group w-full sm:flex sm:h-full sm:items-center sm:justify-center "
               >
-                <Image
-                  src="/IMG_3224.png"
+                <CldImage
+                  src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3224_x04516.png"
                   width={400}
                   height={400}
                   sizes="100vw"
-                  style={{ objectFit: 'cover' }}
-                  alt="item 1"
-                  className="h-auto w-full sm:scale-95 sm:group-hover:hidden"
+                  alt="KickBackStyles ロンT 緑 表"
+                  className="h-auto w-full object-cover sm:scale-95 sm:group-hover:hidden"
                 />
                 <div className="hidden size-full overflow-hidden sm:group-hover:block">
-                  <Image
-                    src="/IMG_1317_SP.JPG"
+                  <CldImage
+                    src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103652/IMG_1317_SP.JPG_03-26-23-559_wgw0u1.jpg"
                     width={400}
                     height={400}
                     sizes="100vw"
-                    style={{ objectFit: 'cover' }}
-                    alt="item 1"
-                    className="h-auto w-full "
+                    alt="KickBackStyles ロンT 緑 裏"
+                    className="h-auto w-full object-cover"
                   />
                 </div>
 
@@ -122,24 +117,22 @@ export default function Home(): JSX.Element {
                 href="/items"
                 className="group size-full sm:flex sm:items-center sm:justify-center"
               >
-                <Image
-                  src="/IMG_3225.png"
+                <CldImage
+                  src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3225_nr1xu5.png"
                   width={400}
                   height={400}
                   sizes="100vw"
-                  style={{ objectFit: 'cover' }}
-                  alt="item 1"
-                  className="h-full w-auto scale-85 sm:scale-105 sm:group-hover:hidden"
+                  alt="KickBackStyles ロンT ピンク 表"
+                  className="h-full w-auto scale-85 object-cover sm:scale-105 sm:group-hover:hidden"
                 />
                 <div className="hidden size-full overflow-hidden sm:group-hover:block">
-                  <Image
-                    src="/IMG_1333_SP.JPG"
+                  <CldImage
+                    src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103650/IMG_1333_SP_hgtgi1.jpg"
                     width={400}
                     height={400}
                     sizes="100vw"
-                    style={{ objectFit: 'cover' }}
-                    alt="item 1"
-                    className="sm:h-full sm:w-auto "
+                    alt="KickBackStyles ロンT ピンク 裏"
+                    className="object-cover sm:h-full sm:w-auto"
                   />
                 </div>
 
@@ -153,9 +146,9 @@ export default function Home(): JSX.Element {
             </li>
             {/* <li className='bg-white min-w-[46vw] sm:min-w-0 w-[46vw] sm:w-1/2 h-[72.8vw] sm:h-1/2 relative flex items-center border-black border-b-1 border-r-1'>
               <Link href='/items' className='w-full sm:h-full sm:flex sm:items-center sm:justify-center group'>
-                <Image src='/ESSENTIALS Hoodie - Gray _ US L.jpeg' width={400} height={400} sizes='100vw' style={{ objectFit: 'cover' }} alt='item 1' className='w-full h-auto sm:group-hover:hidden' />
+                <CldImage src='/ESSENTIALS Hoodie - Gray _ US L.jpeg' width={400} height={400} sizes='100vw' style={{ objectFit: 'cover' }} alt='item 1' className='w-full h-auto sm:group-hover:hidden' />
                 <div className='w-full h-full hidden overflow-hidden sm:group-hover:block'>
-                  <Image src='/ebb1ef1a-19b1-4c38-849d-a05bb06b7f95.jpeg' width={400} height={400} sizes='100vw' style={{ objectFit: 'cover' }} alt='item 1' className='w-full h-auto ' />
+                  <CldImage src='/ebb1ef1a-19b1-4c38-849d-a05bb06b7f95.jpeg' width={400} height={400} sizes='100vw' style={{ objectFit: 'cover' }} alt='item 1' className='w-full h-auto ' />
                 </div>
 
                 <div className='absolute left-sm bottom-xs'>

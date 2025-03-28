@@ -1,11 +1,11 @@
 import { PrismaClient } from '@prisma/client'
-import Image from 'next/image'
 import Link from 'next/link'
 import AboutSection from '../../components/base/AboutSection/AboutSection'
 import Footer from '../../components/base/Footer/Footer'
 import Header from '../../components/base/Header/Header'
 import ProjectsSection from '../../components/base/ProjectsSection/ProjectsSection'
 import Ukv from '../../components/base/Ukv/Ukv/Ukv'
+import ImageComp from '../../components/image/ImageComp/ImageComp'
 
 const prisma = new PrismaClient()
 
@@ -55,8 +55,8 @@ const Items = async ({
     <div>
       <Header color="black" />
       <Ukv
-        src="IMG_1263.JPG"
-        srcSp="IMG_1263_SP.JPG"
+        src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103666/IMG_1263.JPG_03-26-23-392_s25xpo.jpg"
+        srcSp="https://res.cloudinary.com/dvahtyhva/image/upload/v1743152794/IMG_1263_SP_trow8o.jpg"
         imgPosition="bottom-0"
         itemsPage={itemsPage}
         title="Items"
@@ -121,31 +121,32 @@ const Items = async ({
           {items.map((item, index) => (
             <li
               className={`relative flex h-[72.8vw] w-1/2 items-center border-black bg-white sm:h-[44.41vw] sm:w-[calc(100%/3)] 
-                                ${index === 0
-                  ? 'border-1'
-                  : index === 1
-                    ? 'border-y-1 border-r-1'
-                    : index === 2
-                      ? 'border-b-1 border-r-1 sm:border-y-1 sm:border-r-1'
-                      : index > 2
-                        ? 'border-b-1 border-r-1'
-                        : ''
-                }`}
+                                ${
+                                  index === 0
+                                    ? 'border-1'
+                                    : index === 1
+                                      ? 'border-y-1 border-r-1'
+                                      : index === 2
+                                        ? 'border-b-1 border-r-1 sm:border-y-1 sm:border-r-1'
+                                        : index > 2
+                                          ? 'border-b-1 border-r-1'
+                                          : ''
+                                }`}
               key={index}
             >
               <Link
                 href={`/items/${item.id}`}
                 className="w-full sm:flex sm:h-full sm:items-center sm:justify-center"
               >
-                <Image
-                  src={`/${item.thumbnailImage}`}
+                <ImageComp
+                  src={`${item.thumbnailImage}`}
                   width={400}
                   height={400}
                   sizes="100vw"
-                  style={{ objectFit: 'cover' }}
                   alt={item.title}
-                  className="h-auto w-full scale-95"
+                  className="h-auto w-full scale-95 object-cover"
                 />
+
                 <div className="absolute bottom-xs left-sm">
                   <p className="text-sm leading-md text-black sm:text-sm-pc">
                     {item.title}

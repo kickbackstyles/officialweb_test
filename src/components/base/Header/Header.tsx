@@ -1,5 +1,5 @@
 'use client'
-import Image from 'next/image'
+import { CldImage } from 'next-cloudinary'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
@@ -35,18 +35,19 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
             href="/"
             className="block h-[13.1vw] w-2xl sm:fixed sm:top-md sm:size-lg"
           >
-            <Image
-              src="/kbs_web_logo.png"
+            <CldImage
+              src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103638/kbs_web_logo_qh6ka2.png"
               width={100}
               height={100}
-              className="h-auto w-full"
+              className="h-auto w-full object-cover"
               alt="logo image"
             />
           </Link>
           <div className="relative size-[8vw] sm:hidden">
-            <Image
-              src="/shopping-bag-svgrepo-com.svg"
+            <CldImage
+              src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103637/shopping-bag-svgrepo-com_mqgl0y.svg"
               fill
+              className="object-cover"
               alt="shopping bag"
             />
           </div>
@@ -106,13 +107,12 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
           <div className="flex">
             <Link href="/items" className="relative block w-full">
               <div className="relative h-5xl w-full">
-                <Image
-                  src="/IMG_1288_SP.JPG"
+                <CldImage
+                  src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743146322/IMG_1288_SP_mvmpxb.jpg"
                   width={400}
                   height={1000}
                   alt="New Arrivals"
-                  className="absolute h-full w-auto"
-                  style={{ objectFit: 'cover' }}
+                  className="absolute h-full w-auto object-cover"
                 />
               </div>
               <p className="absolute  bottom-xs left-xs text-white">
@@ -121,13 +121,12 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
             </Link>
             <Link href="/items" className="relative block w-full">
               <div className="relative h-5xl w-full">
-                <Image
-                  src="/IMG_1350_SP.JPG"
+                <CldImage
+                  src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103667/IMG_1350_SP.JPG_03-26-23-714_d7wkqq.jpg"
                   width={400}
                   height={1000}
                   alt="Crowdfunding"
-                  className="absolute h-full w-auto"
-                  style={{ objectFit: 'cover' }}
+                  className="absolute h-full w-auto object-cover"
                 />
               </div>
               <p className="absolute  bottom-xs left-xs text-white">
@@ -146,7 +145,12 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
               >
                 <p>Items</p>
                 <div className="relative h-sm w-[1.25vw]">
-                  <Image src="/arrowtoright.png" fill alt="arrow to right" />
+                  <CldImage
+                    src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103639/arrowtoright_dko3cl.png"
+                    fill
+                    alt="arrow to right"
+                    className="object-cover"
+                  />
                 </div>
               </Link>
             </li>
@@ -160,7 +164,12 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
               >
                 <p>Gift</p>
                 <div className="relative h-sm w-[1.25vw]">
-                  <Image src="/arrowtoright.png" fill alt="arrow to right" />
+                  <CldImage
+                    src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103639/arrowtoright_dko3cl.png"
+                    fill
+                    alt="arrow to right"
+                    className="object-cover"
+                  />
                 </div>
               </Link>
             </li>
@@ -174,7 +183,12 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
               >
                 <p>AboutUs</p>
                 <div className="relative h-sm w-[1.25vw]">
-                  <Image src="/arrowtoright.png" fill alt="arrow to right" />
+                  <CldImage
+                    src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103639/arrowtoright_dko3cl.png"
+                    fill
+                    alt="arrow to right"
+                    className="object-cover"
+                  />
                 </div>
               </Link>
             </li>
@@ -188,7 +202,12 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
               >
                 <p>Projects</p>
                 <div className="relative h-sm w-[1.25vw]">
-                  <Image src="/arrowtoright.png" fill alt="arrow to right" />
+                  <CldImage
+                    src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103639/arrowtoright_dko3cl.png"
+                    fill
+                    alt="arrow to right"
+                    className="object-cover"
+                  />
                 </div>
               </Link>
             </li>
@@ -200,7 +219,12 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
                 className="flex w-full flex-col items-center justify-center gap-sm border-b-1 border-r-1 border-black py-2xl"
               >
                 <div className="relative size-lg">
-                  <Image src="/instagram.png" fill alt="instagram icon" />
+                  <CldImage
+                    src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103638/instagram_wyvwbt.png"
+                    fill
+                    alt="instagram icon"
+                    className="object-cover"
+                  />
                 </div>
                 <p>@kickbackstyles.official</p>
               </Link>
@@ -209,15 +233,26 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
                 className="flex w-full flex-col items-center justify-center gap-sm border-b-1 border-black py-2xl"
               >
                 <div className="relative h-lg w-[4.74vw]">
-                  <Image src="/tiktok.png" fill alt="tiktok icon" />
+                  <CldImage
+                    src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103637/tiktok_al5d9j.png"
+                    fill
+                    alt="tiktok icon"
+                    className="object-cover"
+                  />
                 </div>
                 <p>@kickbackstyles_official</p>
               </Link>
             </div>
             <div className="flex h-[50vw]">
               <div className="flex w-full flex-col items-center justify-center gap-sm border-b-1 border-r-1 border-black py-2xl">
-                <div className="relative h-[13.01vw] w-2xl">
-                  <Image src="/kbs_web_logo.png" fill alt="kbs logo icon" />
+                <div className="relative size-xl">
+                  <CldImage
+                    src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103638/kbs_logo_wwedmt.png"
+                    width={100}
+                    height={100}
+                    alt="kbs logo icon"
+                    className="h-auto w-full object-cover"
+                  />
                 </div>
               </div>
               <div className=" w-full border-b-1 border-black py-2xl">

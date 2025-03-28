@@ -1,7 +1,7 @@
 'use client'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import Image from 'next/image'
+import { CldImage } from 'next-cloudinary'
 import { useEffect, useRef } from 'react'
 import Button from '../../button/Button/Button'
 
@@ -21,7 +21,6 @@ const AboutSection = (): JSX.Element => {
           start: windowWidth < 640 ? 'top+=10% center' : 'top+=20% bottom', // スクロール開始位置
           end: windowWidth < 640 ? 'bottom-=10% center' : 'bottom-=20% top', // スクロール終了位置
           scrub: true, // スクロールに合わせてアニメーションを遅延させる
-
         },
       })
       .to(windowWidth < 640 ? refSp.current : ref.current, {
@@ -35,32 +34,30 @@ const AboutSection = (): JSX.Element => {
     <div className="sec-aboutus">
       <div className="flex h-[161.8vw] w-full items-center justify-center overflow-hidden sm:h-[48vw]">
         <div className="relative size-full ">
-          <Image
-            src="/IMG_1255.JPG"
+          <CldImage
+            src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743104649/IMG_1255_sshe9q.jpg"
             ref={ref}
-            style={{ objectFit: 'cover' }}
             width={2000}
             height={5000}
-            className="absolute hidden sm:block sm:top-[-30%] sm:left-auto sm:w-full sm:h-auto sm:scale-110"
+            className="absolute hidden object-cover sm:left-auto sm:top-[-30%] sm:block sm:h-auto sm:w-full sm:scale-110"
             alt="aboutus image"
           />
-          <Image
-            src="/IMG_1255_SP.JPG"
+          <CldImage
+            src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103658/IMG_1255_SP_pe2vvd.jpg"
             ref={refSp}
-            style={{ objectFit: 'cover' }}
             width={1000}
             height={2000}
-            className="absolute top-[-10%] h-full w-auto scale-150 sm:hidden"
+            className="absolute top-[-10%] h-full w-auto scale-150 object-cover sm:hidden"
             alt="aboutus image"
           />
         </div>
         <div className=" absolute z-10 flex flex-col gap-md">
-          <Image
-            src="/IMG_2467.png"
+          <CldImage
+            src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103642/IMG_2467_nivvkc.png"
             width={500}
             height={500}
             alt="with all my love"
-            className="mb-md h-auto w-[86vw] sm:mb-sm sm:w-5xl"
+            className="mb-md h-auto w-[86vw] object-cover sm:mb-sm sm:w-5xl"
           />
           <div className="mx-auto w-[50vw] sm:flex sm:justify-center sm:gap-xl">
             <Button

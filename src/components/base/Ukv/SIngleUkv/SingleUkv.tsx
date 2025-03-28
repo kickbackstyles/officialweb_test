@@ -1,7 +1,7 @@
 'use client'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css/core'
-import Image from 'next/image'
+import { CldImage } from 'next-cloudinary'
 import React, { useState } from 'react'
 import Button from '../../../button/Button/Button'
 import '../Ukv.modules.css'
@@ -78,8 +78,8 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
       <div className="absolute left-0 top-0 z-0 hidden h-[17.01vw] w-full border-b-1 border-black sm:block"></div>
       <div className=" sm:flex sm:items-end">
         <div className="relative hidden h-[144vw] w-full sm:z-10 sm:flex sm:h-[48vw] sm:w-5xl sm:items-center sm:justify-center sm:overflow-hidden">
-          <Image
-            src={`/${selectedImages[0].url}`}
+          <CldImage
+            src={`${selectedImages[0].url}`}
             width={900}
             height={900}
             alt="key visual"
@@ -105,7 +105,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
                   <SplideSlide key={index}>
                     {/* 画像は縦より横の方が大きく切る */}
                     <img
-                      src={`/${image.url}`}
+                      src={`${image.url}`}
                       className="h-full object-cover"
                       alt={image.alt}
                     />
@@ -148,8 +148,8 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
                   className={`size-3xl overflow-hidden sm:cursor-pointer  ${color.title === selectedColorTitle ? 'opacity-50' : 'opacity-100'}`}
                   tabIndex={index}
                 >
-                  <Image
-                    src={`/${color.images[0].url}`}
+                  <CldImage
+                    src={`${color.images[0].url}`}
                     width={300}
                     height={400}
                     style={{ objectFit: 'cover' }}
@@ -198,8 +198,8 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
                     className={`size-3xl overflow-hidden sm:size-xl sm:cursor-pointer ${color.title === selectedColorTitle ? 'opacity-50' : 'opacity-100'}`}
                     tabIndex={index}
                   >
-                    <Image
-                      src={`/${color.images[0].url}`}
+                    <CldImage
+                      src={`${color.images[0].url}`}
                       width={300}
                       height={400}
                       style={{ objectFit: 'cover' }}
@@ -226,8 +226,8 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
                     key={index}
                     className={`${index === 0 ? 'hidden' : ''} relative flex w-[46vw] items-center border-y-1 border-r-1 border-black bg-white sm:h-4xl sm:w-1/2 sm:overflow-hidden`}
                   >
-                    <Image
-                      src={`/${image.url}`}
+                    <CldImage
+                      src={`${image.url}`}
                       width={500}
                       height={800}
                       style={{ objectFit: 'cover' }}

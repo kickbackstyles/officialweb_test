@@ -1,4 +1,5 @@
-import Image from 'next/image'
+'use client'
+import { CldImage } from 'next-cloudinary'
 import Link from 'next/link'
 import Button from '../../button/Button/Button'
 
@@ -12,8 +13,8 @@ const Footer = (): JSX.Element => {
             className="group flex h-4xl w-1/2 flex-col items-center justify-center gap-sm border-b-1 border-r-1 border-black sm:h-2xl sm:w-[calc(100%/3)]"
           >
             <div className="size-lg sm:size-sm">
-              <Image
-                src="/instagram.png"
+              <CldImage
+                src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103638/instagram_wyvwbt.png"
                 width={100}
                 height={100}
                 className="h-auto w-full duration-100 sm:group-hover:scale-110"
@@ -28,8 +29,8 @@ const Footer = (): JSX.Element => {
             className="group flex h-4xl w-1/2 flex-col items-center justify-center gap-sm border-b-1 border-black sm:h-2xl sm:w-[calc(100%/3)] sm:border-r-1"
           >
             <div className="h-lg w-[4.74vw] sm:size-sm ">
-              <Image
-                src="/tiktok.png"
+              <CldImage
+                src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103637/tiktok_al5d9j.png"
                 width={100}
                 height={100}
                 className="h-auto w-full duration-100 sm:h-full sm:w-auto sm:group-hover:scale-125"
@@ -39,9 +40,9 @@ const Footer = (): JSX.Element => {
             <p>@kickbackstyles_official</p>
           </Link>
           <div className="flex h-4xl w-1/2 flex-col items-center justify-center gap-sm border-b-1 border-r-1 border-black sm:h-2xl sm:w-[calc(100%/3)]">
-            <div className="h-[13.01vw] w-2xl sm:size-lg">
-              <Image
-                src="/kbs_web_logo.png"
+            <div className="size-2xl sm:size-lg">
+              <CldImage
+                src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103638/kbs_web_logo_qh6ka2.png"
                 width={100}
                 height={100}
                 className="h-auto w-full"
@@ -54,8 +55,8 @@ const Footer = (): JSX.Element => {
               <div>
                 <p className="mb-sm sm:mb-xxs sm:flex sm:items-center sm:gap-xxs">
                   <span className="hidden size-xxs sm:block">
-                    <Image
-                      src="/mappin.png"
+                    <CldImage
+                      src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103638/mappin_rcxhyg.png"
                       width={40}
                       height={40}
                       className="h-full w-auto"
@@ -69,8 +70,8 @@ const Footer = (): JSX.Element => {
                   className="mb-md block sm:mb-sm sm:flex sm:items-center sm:gap-xxs"
                 >
                   <span className="hidden size-xxs sm:block">
-                    <Image
-                      src="/phone.png"
+                    <CldImage
+                      src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103637/phone_mjlkcj.png"
                       width={40}
                       height={40}
                       className="h-full w-auto"
@@ -182,8 +183,8 @@ const Footer = (): JSX.Element => {
       <div className="flex h-xl w-full items-center justify-center sm:h-md">
         <p className="flex items-center gap-xs text-xs sm:gap-xxxxs sm:text-[0.7vw]">
           <span className="block size-sm sm:size-xxs">
-            <Image
-              src="/copyright-icon.png"
+            <CldImage
+              src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103638/copyright-icon_e7gusf.png"
               width={30}
               height={30}
               className="h-auto w-full"

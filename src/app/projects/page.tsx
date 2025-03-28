@@ -1,10 +1,10 @@
 import { PrismaClient } from '@prisma/client'
-import Image from 'next/image'
 import Link from 'next/link'
 import AboutSection from '../../components/base/AboutSection/AboutSection'
 import Footer from '../../components/base/Footer/Footer'
 import Header from '../../components/base/Header/Header'
 import Ukv from '../../components/base/Ukv/Ukv/Ukv'
+import ImageComp from '../../components/image/ImageComp/ImageComp'
 
 const prisma = new PrismaClient()
 
@@ -23,17 +23,17 @@ const getProjects = async (searchParams: {
   const projects = await prisma.project.findMany({
     where: searchParam
       ? {
-        projectTags: {
-          some: {
-            projectTag: {
-              title: {
-                contains: searchParam, // 文字列として扱う
-                mode: 'insensitive',
+          projectTags: {
+            some: {
+              projectTag: {
+                title: {
+                  contains: searchParam, // 文字列として扱う
+                  mode: 'insensitive',
+                },
               },
             },
           },
-        },
-      }
+        }
       : {},
     orderBy: {
       id: 'asc',
@@ -53,8 +53,8 @@ const Projects = async ({
     <div>
       <Header color="black" />
       <Ukv
-        src="IMG_1311.JPG"
-        srcSp="IMG_1311_SP.JPG"
+        src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103658/IMG_1311.JPG_03-26-23-512_ei5det.jpg"
+        srcSp="https://res.cloudinary.com/dvahtyhva/image/upload/v1743104335/IMG_1311_SP_acmpyn.jpg"
         itemsPage={false}
         title="Projects"
         english="At KickBackStyles, we are dedicated to ‘Spreading Love to Everyone’ by connecting with people through pop-ups, projects, and events. To expand these activities, we also engage in crowdfunding initiatives."
@@ -79,10 +79,11 @@ const Projects = async ({
               href={`/projects/${project.id}`}
               className={`relative block h-[100vw] w-full sm:h-5xl ${index === 0 || index === 5 ? 'sm:w-2/5' : index === 1 || index === 4 ? 'sm:w-3/5' : index === 2 || index === 3 ? 'sm:w-1/2' : ''}`}
             >
-              <Image
-                src={`/${project.thumbnailImageUrl}`}
-                fill
-                style={{ objectFit: 'cover' }}
+              <ImageComp
+                src={`${project.thumbnailImageUrl}`}
+                width={1000}
+                height={1000}
+                className="object-cover brightness-90"
                 alt={project.title}
               />
               <div className="absolute bottom-md left-sm sm:bottom-sm">
@@ -92,25 +93,29 @@ const Projects = async ({
                 <p className="text-white sm:mb-xxxs">
                   {project.thumbnailContext}
                 </p>
-                <p
-                  className={` ${project.location === null ? 'hidden' : 'flex'} items-center gap-xxs text-white sm:gap-xxxxs`}
-                >
-                  <span className="size-sm sm:size-xxs">
-                    <Image
-                      src="/Icon awesome-map-pin.png"
-                      width={40}
-                      height={40}
-                      className="h-full w-auto"
-                      alt="map icon"
-                    />
-                  </span>
-                  {project.location}{' '}
+                <p className="flex items-center gap-xxs text-white sm:gap-xxxxs">
                   <span
-                    className={`${!project.date && 'hidden'} ms:mx-xxxs mx-xxs`}
+                    className={`${project.location ? 'flex' : 'hidden'}  items-center gap-xxs`}
                   >
-                    /
-                  </span>{' '}
-                  {project.date}
+                    <span className="block size-sm sm:size-xxs">
+                      <ImageComp
+                        src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103639/Icon_awesome-map-pin_o9me3u.png"
+                        width={40}
+                        height={40}
+                        className="h-full w-auto"
+                        alt="map icon"
+                      />
+                    </span>
+                    {project.location}{' '}
+                  </span>
+                  <span className={`${project.date ? 'flex' : 'hidden'} `}>
+                    <span
+                      className={`${!project.location && 'hidden'} ms:mx-xxxs mx-xxs`}
+                    >
+                      /{' '}
+                    </span>
+                    {project.date}
+                  </span>
                 </p>
               </div>
             </Link>
