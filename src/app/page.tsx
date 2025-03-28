@@ -17,6 +17,7 @@ export default function Home(): JSX.Element {
             fill
             className="object-cover"
             alt="key visual"
+            priority
           />
           <div className="absolute bottom-2xl left-md ">
             <h1 className="w-3/5 text-md leading-md text-white sm:w-full sm:text-md-pc">
@@ -36,7 +37,7 @@ export default function Home(): JSX.Element {
               <div className="size-xxs bg-white sm:size-xxxxs"></div>
             </div>
           </div>
-          <Link href="/items" className="group block size-full">
+          <Link href="/items" className="group block size-full relative">
             <CldImage
               src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743106008/IMG_1344_rhkg3e.jpg"
               fill
@@ -50,14 +51,14 @@ export default function Home(): JSX.Element {
           <ul className="flex flex-nowrap overflow-x-scroll sm:h-full sm:flex-wrap sm:overflow-x-auto">
             <li className="relative flex h-[72.8vw] w-[46vw] min-w-[46vw] items-center overflow-hidden border-1 border-black bg-white sm:size-1/2 sm:min-w-0">
               <Link
-                href="/items"
+                href="/items/2"
                 className="group size-full sm:flex sm:items-center sm:justify-center "
               >
                 <CldImage
                   src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103641/IMG_3220_vulr2q.png"
                   width={400}
                   height={400}
-                  sizes="100vw"
+                  sizes="60vw"
                   alt="KickBackStyles ロンT 黒 表"
                   className="h-full w-auto scale-90 object-cover sm:scale-105 sm:group-hover:hidden"
                 />

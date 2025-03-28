@@ -41,6 +41,7 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
               height={100}
               className="h-auto w-full object-cover"
               alt="logo image"
+              priority
             />
           </Link>
           <div className="relative size-[8vw] sm:hidden">
@@ -49,6 +50,7 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
               fill
               className="object-cover"
               alt="shopping bag"
+              priority
             />
           </div>
           <ul className="hidden flex-col items-end gap-xxxs sm:fixed sm:right-md sm:top-md sm:flex">
