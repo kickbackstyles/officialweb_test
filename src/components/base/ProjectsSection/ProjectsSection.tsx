@@ -35,22 +35,31 @@ const ProjectsSection = (): JSX.Element => {
     <div className="sec-projects">
       <div className="relative h-[161.8vw] w-full overflow-hidden sm:h-[48vw]">
         <div className="relative h-full w-auto sm:flex sm:w-full sm:items-center">
-          <CldImage
-            src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103658/IMG_1311.JPG_03-26-23-512_ei5det.jpg"
-            ref={ref}
-            width={2000}
-            height={5000}
-            className="sm:scale-120 absolute hidden object-cover sm:top-[-40%] sm:block sm:h-auto sm:w-full"
-            alt="projects background image"
-          />
-          <CldImage
-            src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743104335/IMG_1311_SP_acmpyn.jpg"
-            ref={refSp}
-            width={1000}
-            height={2000}
-            className="absolute h-full w-auto scale-150 object-cover sm:hidden"
-            alt="projects background image"
-          />
+          <picture>
+            {/* PC用画像 */}
+            <source
+              media="(min-width: 640px)"
+              srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_2048,f_auto,q_auto/v1743103658/IMG_1311.JPG_03-26-23-512_ei5det.jpg 2048w,
+            https://res.cloudinary.com/dvahtyhva/image/upload/w_1536,f_auto,q_auto/v1743103658/IMG_1311.JPG_03-26-23-512_ei5det.jpg 1536w"
+              sizes="100vw"
+            />
+            {/* SP用画像 */}
+            <source
+              media="(max-width: 639px)"
+              srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_828,f_auto,q_auto/v1743104335/IMG_1311_SP_acmpyn.jpg 828w,
+            https://res.cloudinary.com/dvahtyhva/image/upload/w_640,f_auto,q_auto/v1743104335/IMG_1311_SP_acmpyn.jpg 640w"
+              sizes="100vw"
+            />
+            <CldImage
+              src="https://res.cloudinary.com/dvahtyhva/image/upload/w_1024,f_auto,q_auto/v1743103658/IMG_1311.JPG_03-26-23-512_ei5det.jpg"
+              ref={ref}
+              width={2000}
+              height={1400}
+              className="sm:scale-120 absolute hidden object-cover sm:top-[-40%] sm:block sm:h-auto sm:w-full"
+              alt="projects background image"
+              loading="lazy"
+            />
+          </picture>
         </div>
         <div className="absolute bottom-2xl left-md sm:bottom-lg">
           <h2 className="mb-xl text-lg text-white sm:mb-sm sm:text-md-pc">

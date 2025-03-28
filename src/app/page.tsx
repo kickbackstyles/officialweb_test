@@ -12,13 +12,25 @@ export default function Home(): JSX.Element {
       <Header />
       <div className="kv">
         <div className="relative h-[161.8vw] w-full sm:h-5xl">
-          <CldImage
-            src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103655/IMG_1352.JPG_03-26-23-756_f6in45.jpg"
-            fill
-            className="object-cover"
-            alt="key visual"
-            priority
-          />
+          <picture>
+            <source
+              media="(min-width: 1024px)"
+              srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_2048,f_auto,q_auto/v1743103655/IMG_1352.JPG_03-26-23-756_f6in45.jpg"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_1536,f_auto,q_auto/v1743103655/IMG_1352.JPG_03-26-23-756_f6in45.jpg"
+            />
+            <CldImage
+              src="https://res.cloudinary.com/dvahtyhva/image/upload/w_1024,f_auto,q_auto/v1743103655/IMG_1352.JPG_03-26-23-756_f6in45.jpg"
+              sizes="40vw"
+              fill
+              className="object-cover"
+              alt="key visual"
+              priority
+            />
+          </picture>
+
           <div className="absolute bottom-2xl left-md ">
             <h1 className="w-3/5 text-md leading-md text-white sm:w-full sm:text-md-pc">
               @kickbackstyles.official
@@ -38,13 +50,24 @@ export default function Home(): JSX.Element {
             </div>
           </div>
           <Link href="/items" className="group block size-full relative">
-            <CldImage
-              src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743106008/IMG_1344_rhkg3e.jpg"
-              fill
-              style={{ objectFit: 'cover' }}
-              alt="Section items visual"
-              className="duration-100 sm:group-hover:scale-105"
-            />
+            <picture>
+              <source
+                media="(min-width: 1024px)"
+                srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_1000,f_auto,q_auto/v1743106008/IMG_1344_rhkg3e.jpg"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_750,f_auto,q_auto/v1743106008/IMG_1344_rhkg3e.jpg"
+              />
+              <CldImage
+                src="https://res.cloudinary.com/dvahtyhva/image/upload/w_500,f_auto,q_auto/v1743106008/IMG_1344_rhkg3e.jpg"
+                fill
+                style={{ objectFit: 'cover' }}
+                alt="Section items visual"
+                className="duration-100 sm:group-hover:scale-105"
+                loading="lazy"
+              />
+            </picture>
           </Link>
         </div>
         <div className="sm:h-5xl sm:w-1/2">
@@ -54,23 +77,45 @@ export default function Home(): JSX.Element {
                 href="/items/2"
                 className="group size-full sm:flex sm:items-center sm:justify-center "
               >
-                <CldImage
-                  src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103641/IMG_3220_vulr2q.png"
-                  width={400}
-                  height={400}
-                  sizes="60vw"
-                  alt="KickBackStyles ロンT 黒 表"
-                  className="h-full w-auto scale-90 object-cover sm:scale-105 sm:group-hover:hidden"
-                />
-                <div className="hidden size-full overflow-hidden sm:group-hover:block">
-                  <CldImage
-                    src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103655/IMG_1248_SP.JPG_03-26-23-263_imuuob.jpg"
-                    width={400}
-                    height={400}
-                    sizes="100vw"
-                    alt="KickBackStyles ロンT 黒 裏"
-                    className="object-cover sm:h-full sm:w-auto"
+                <picture>
+                  <source
+                    media="(min-width: 1024px)"
+                    srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_800,f_auto,q_auto/v1743103641/IMG_3220_vulr2q.png 800w"
                   />
+                  <source
+                    media="(min-width: 640px)"
+                    srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_600,f_auto,q_auto/v1743103641/IMG_3220_vulr2q.png 600w"
+                  />
+                  <CldImage
+                    src="https://res.cloudinary.com/dvahtyhva/image/upload/w_400,f_auto,q_auto/v1743103641/IMG_3220_vulr2q.png"
+                    width={1200}
+                    height={1200}
+                    sizes="60vw"
+                    alt="KickBackStyles ロンT 黒 表"
+                    className="h-full w-auto scale-90 object-cover sm:scale-105 sm:group-hover:hidden"
+                    loading="lazy"
+                  />
+                </picture>
+                <div className="hidden size-full overflow-hidden sm:group-hover:block">
+                  <picture>
+                    <source
+                      media="(min-width: 1024px)"
+                      srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_800,f_auto,q_auto/v1743103655/IMG_1248_SP.JPG_03-26-23-263_imuuob.jpg 800w"
+                    />
+                    <source
+                      media="(min-width: 640px)"
+                      srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_600,f_auto,q_auto/v1743103655/IMG_1248_SP.JPG_03-26-23-263_imuuob.jpg 600w"
+                    />
+                    <CldImage
+                      src="https://res.cloudinary.com/dvahtyhva/image/upload/w_400,f_auto,q_auto/v1743103655/IMG_1248_SP.JPG_03-26-23-263_imuuob.jpg"
+                      width={1200}
+                      height={1200}
+                      sizes="100vw"
+                      alt="KickBackStyles ロンT 黒 裏"
+                      className="object-cover sm:h-full sm:w-auto"
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
 
                 <div className="absolute bottom-xs left-sm">
@@ -86,23 +131,45 @@ export default function Home(): JSX.Element {
                 href="/items"
                 className="group w-full sm:flex sm:h-full sm:items-center sm:justify-center "
               >
-                <CldImage
-                  src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3224_x04516.png"
-                  width={400}
-                  height={400}
-                  sizes="100vw"
-                  alt="KickBackStyles ロンT 緑 表"
-                  className="h-auto w-full object-cover sm:scale-95 sm:group-hover:hidden"
-                />
-                <div className="hidden size-full overflow-hidden sm:group-hover:block">
-                  <CldImage
-                    src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103652/IMG_1317_SP.JPG_03-26-23-559_wgw0u1.jpg"
-                    width={400}
-                    height={400}
-                    sizes="100vw"
-                    alt="KickBackStyles ロンT 緑 裏"
-                    className="h-auto w-full object-cover"
+                <picture>
+                  <source
+                    media="(min-width: 1024px)"
+                    srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_800,f_auto,q_auto/v1743103643/IMG_3224_x04516.png 800w"
                   />
+                  <source
+                    media="(min-width: 640px)"
+                    srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_600,f_auto,q_auto/v1743103643/IMG_3224_x04516.png 600w"
+                  />
+                  <CldImage
+                    src="https://res.cloudinary.com/dvahtyhva/image/upload/w_400,f_auto,q_auto/v1743103643/IMG_3224_x04516.png"
+                    width={1200}
+                    height={1200}
+                    sizes="100vw"
+                    alt="KickBackStyles ロンT 緑 表"
+                    className="h-auto w-full object-cover sm:scale-95 sm:group-hover:hidden"
+                    loading="lazy"
+                  />
+                </picture>
+                <div className="hidden size-full overflow-hidden sm:group-hover:block">
+                  <picture>
+                    <source
+                      media="(min-width: 1024px)"
+                      srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_800,f_auto,q_auto/v1743103652/IMG_1317_SP.JPG_03-26-23-559_wgw0u1.jpg 800w"
+                    />
+                    <source
+                      media="(min-width: 640px)"
+                      srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_600,f_auto,q_auto/v1743103652/IMG_1317_SP.JPG_03-26-23-559_wgw0u1.jpg 600w"
+                    />
+                    <CldImage
+                      src="https://res.cloudinary.com/dvahtyhva/image/upload/w_400,f_auto,q_auto/v1743103652/IMG_1317_SP.JPG_03-26-23-559_wgw0u1.jpg"
+                      width={1200}
+                      height={1200}
+                      sizes="100vw"
+                      alt="KickBackStyles ロンT 緑 裏"
+                      className="h-auto w-full object-cover"
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
 
                 <div className="absolute bottom-xs left-sm">
@@ -118,23 +185,45 @@ export default function Home(): JSX.Element {
                 href="/items"
                 className="group size-full sm:flex sm:items-center sm:justify-center"
               >
-                <CldImage
-                  src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3225_nr1xu5.png"
-                  width={400}
-                  height={400}
-                  sizes="100vw"
-                  alt="KickBackStyles ロンT ピンク 表"
-                  className="h-full w-auto scale-85 object-cover sm:scale-105 sm:group-hover:hidden"
-                />
-                <div className="hidden size-full overflow-hidden sm:group-hover:block">
-                  <CldImage
-                    src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103650/IMG_1333_SP_hgtgi1.jpg"
-                    width={400}
-                    height={400}
-                    sizes="100vw"
-                    alt="KickBackStyles ロンT ピンク 裏"
-                    className="object-cover sm:h-full sm:w-auto"
+                <picture>
+                  <source
+                    media="(min-width: 1024px)"
+                    srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_800,f_auto,q_auto/v1743103643/IMG_3225_nr1xu5.png 800w"
                   />
+                  <source
+                    media="(min-width: 640px)"
+                    srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_600,f_auto,q_auto/v1743103643/IMG_3225_nr1xu5.png 600w"
+                  />
+                  <CldImage
+                    src="https://res.cloudinary.com/dvahtyhva/image/upload/w_400,f_auto,q_auto/v1743103643/IMG_3225_nr1xu5.png"
+                    width={1200}
+                    height={1200}
+                    sizes="100vw"
+                    alt="KickBackStyles ロンT ピンク 表"
+                    className="h-full w-auto scale-85 object-cover sm:scale-105 sm:group-hover:hidden"
+                    loading="lazy"
+                  />
+                </picture>
+                <div className="hidden size-full overflow-hidden sm:group-hover:block">
+                  <picture>
+                    <source
+                      media="(min-width: 1024px)"
+                      srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_800,f_auto,q_auto/v1743103650/IMG_1333_SP_hgtgi1.jpg 800w"
+                    />
+                    <source
+                      media="(min-width: 640px)"
+                      srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_600,f_auto,q_auto/v1743103650/IMG_1333_SP_hgtgi1.jpg 600w"
+                    />
+                    <CldImage
+                      src="https://res.cloudinary.com/dvahtyhva/image/upload/w_400,f_auto,q_auto/v1743103650/IMG_1333_SP_hgtgi1.jpg"
+                      width={1200}
+                      height={1200}
+                      sizes="100vw"
+                      alt="KickBackStyles ロンT ピンク 裏"
+                      className="object-cover sm:h-full sm:w-auto"
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
 
                 <div className="absolute bottom-xs left-sm ">

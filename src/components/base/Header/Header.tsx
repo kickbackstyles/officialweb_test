@@ -37,8 +37,8 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
           >
             <CldImage
               src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103638/kbs_web_logo_qh6ka2.png"
-              width={100}
-              height={100}
+              width={500}
+              height={500}
               className="h-auto w-full object-cover"
               alt="logo image"
               priority

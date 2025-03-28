@@ -34,30 +34,40 @@ const AboutSection = (): JSX.Element => {
     <div className="sec-aboutus">
       <div className="flex h-[161.8vw] w-full items-center justify-center overflow-hidden sm:h-[48vw]">
         <div className="relative size-full ">
-          <CldImage
-            src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743104649/IMG_1255_sshe9q.jpg"
-            ref={ref}
-            width={2000}
-            height={5000}
-            className="absolute hidden object-cover sm:left-auto sm:top-[-30%] sm:block sm:h-auto sm:w-full sm:scale-110"
-            alt="aboutus image"
-          />
-          <CldImage
-            src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103658/IMG_1255_SP_pe2vvd.jpg"
-            ref={refSp}
-            width={1000}
-            height={2000}
-            className="absolute top-[-10%] h-full w-auto scale-150 object-cover sm:hidden"
-            alt="aboutus image"
-          />
+          <picture>
+            {/* PC用画像 */}
+            <source
+              media="(min-width: 640px)"
+              srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_2048,f_auto,q_auto/v1743104649/IMG_1255_sshe9q.jpg 2048w,
+            https://res.cloudinary.com/dvahtyhva/image/upload/w_1536,f_auto,q_auto/v1743104649/IMG_1255_sshe9q.jpg 1536w"
+              sizes="100vw"
+            />
+            {/* SP用画像 */}
+            <source
+              media="(max-width: 639px)"
+              srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_828,f_auto,q_auto/v1743103658/IMG_1255_SP_pe2vvd.jpg 828w,
+            https://res.cloudinary.com/dvahtyhva/image/upload/w_640,f_auto,q_auto/v1743103658/IMG_1255_SP_pe2vvd.jpg 640w"
+              sizes="100vw"
+            />
+            <CldImage
+              src="https://res.cloudinary.com/dvahtyhva/image/upload/w_1024,f_auto,q_auto/v1743104649/IMG_1255_sshe9q.jpg"
+              ref={ref}
+              width={2000}
+              height={1400}
+              className="absolute hidden object-cover sm:left-auto sm:top-[-30%] sm:block sm:h-auto sm:w-full sm:scale-110"
+              alt="aboutus image"
+              loading="lazy"
+            />
+          </picture>
         </div>
         <div className=" absolute z-10 flex flex-col gap-md">
           <CldImage
             src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103642/IMG_2467_nivvkc.png"
-            width={500}
+            width={1024}
             height={500}
             alt="with all my love"
             className="mb-md h-auto w-[86vw] object-cover sm:mb-sm sm:w-5xl"
+            loading="lazy"
           />
           <div className="mx-auto w-[50vw] sm:flex sm:justify-center sm:gap-xl">
             <Button
@@ -67,6 +77,7 @@ const AboutSection = (): JSX.Element => {
               size="sm"
               sizePc="sm-pc"
               className="mb-lg sm:mb-0 sm:w-2xl"
+
             />
             <Button
               href="/aboutus"
