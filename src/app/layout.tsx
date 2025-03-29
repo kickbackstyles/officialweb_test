@@ -1,8 +1,8 @@
-// import { SpeedInsights } from '@vercel/speed-insights/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
 import localfont from 'next/font/local'
 import { Providers } from '../../providers'
-// import GoogleAnalytics from '../components/GoogleAnalytics/GoogleAnalytics'
+import GoogleAnalytics from '../components/GoogleAnalytics/GoogleAnalytics'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -22,11 +22,6 @@ const hackNard = localfont({
       weight: '700',
       style: 'bold',
     },
-    {
-      path: '/fonts/HackNerdFont-Thin.ttf',
-      weight: '100',
-      style: 'thin',
-    },
   ],
   display: 'swap',
 })
@@ -39,8 +34,8 @@ export default function RootLayout({
       <body
         className={`${hackNard.className} overflow-x-hidden text-sm text-black sm:text-sm-pc`}
       >
-        {/* <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_ID} /> */}
-        {/* <SpeedInsights /> */}
+        <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_ID} />
+        <SpeedInsights />
         <Providers>{children}</Providers>
       </body>
     </html>

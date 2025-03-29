@@ -5,6 +5,7 @@ import AboutSection from '../components/base/AboutSection/AboutSection'
 import Footer from '../components/base/Footer/Footer'
 import Header from '../components/base/Header/Header'
 import ProjectsSection from '../components/base/ProjectsSection/ProjectsSection'
+import { getOptimizedImageUrl } from '../components/Hooks/getOptimizedUrl'
 
 export default function Home(): JSX.Element {
   return (
@@ -15,15 +16,19 @@ export default function Home(): JSX.Element {
           <picture>
             <source
               media="(min-width: 1024px)"
-              srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_2048,f_auto,q_auto/v1743103655/IMG_1352.JPG_03-26-23-756_f6in45.jpg"
+              srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103655/IMG_1352.JPG_03-26-23-756_f6in45.jpg', 2048)} 2048w,
+                ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103655/IMG_1352.JPG_03-26-23-756_f6in45.jpg', 1440)} 1440w`}
+              sizes="2048px"
             />
             <source
               media="(min-width: 768px)"
-              srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_1536,f_auto,q_auto/v1743103655/IMG_1352.JPG_03-26-23-756_f6in45.jpg"
+              srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103655/IMG_1352.JPG_03-26-23-756_f6in45.jpg', 1024)} 1024w,
+                ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103655/IMG_1352.JPG_03-26-23-756_f6in45.jpg', 768)} 768w`}
+              sizes="1024px"
             />
             <CldImage
-              src="https://res.cloudinary.com/dvahtyhva/image/upload/w_1024,f_auto,q_auto/v1743103655/IMG_1352.JPG_03-26-23-756_f6in45.jpg"
-              sizes="40vw"
+              src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103655/IMG_1352.JPG_03-26-23-756_f6in45.jpg', 1024)}
+              sizes="(max-width: 767px) 100vw, (max-width: 1023px) 1024px, 1440px"
               fill
               className="object-cover"
               alt="key visual"
@@ -53,19 +58,24 @@ export default function Home(): JSX.Element {
             <picture>
               <source
                 media="(min-width: 1024px)"
-                srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_1000,f_auto,q_auto/v1743106008/IMG_1344_rhkg3e.jpg"
+                srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743106008/IMG_1344_rhkg3e.jpg', 1000)} 1000w,
+                  ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743106008/IMG_1344_rhkg3e.jpg', 800)} 800w`}
+                sizes="1000px"
               />
               <source
                 media="(min-width: 768px)"
-                srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_750,f_auto,q_auto/v1743106008/IMG_1344_rhkg3e.jpg"
+                srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743106008/IMG_1344_rhkg3e.jpg', 750)} 750w,
+                  ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743106008/IMG_1344_rhkg3e.jpg', 500)} 500w`}
+                sizes="750px"
               />
               <CldImage
-                src="https://res.cloudinary.com/dvahtyhva/image/upload/w_500,f_auto,q_auto/v1743106008/IMG_1344_rhkg3e.jpg"
+                src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743106008/IMG_1344_rhkg3e.jpg', 500)}
                 fill
                 style={{ objectFit: 'cover' }}
                 alt="Section items visual"
                 className="duration-100 sm:group-hover:scale-105"
                 loading="lazy"
+                sizes="(max-width: 767px) 100vw, (max-width: 1023px) 750px, 1000px"
               />
             </picture>
           </Link>
@@ -80,17 +90,21 @@ export default function Home(): JSX.Element {
                 <picture>
                   <source
                     media="(min-width: 1024px)"
-                    srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_800,f_auto,q_auto/v1743103641/IMG_3220_vulr2q.png 800w"
+                    srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103641/IMG_3220_vulr2q.png', 800)} 800w,
+                      ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103641/IMG_3220_vulr2q.png', 600)} 600w`}
+                    sizes="800px"
                   />
                   <source
                     media="(min-width: 640px)"
-                    srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_600,f_auto,q_auto/v1743103641/IMG_3220_vulr2q.png 600w"
+                    srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103641/IMG_3220_vulr2q.png', 600)} 600w,
+                      ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103641/IMG_3220_vulr2q.png', 400)} 400w`}
+                    sizes="600px"
                   />
                   <CldImage
-                    src="https://res.cloudinary.com/dvahtyhva/image/upload/w_400,f_auto,q_auto/v1743103641/IMG_3220_vulr2q.png"
-                    width={1200}
-                    height={1200}
-                    sizes="60vw"
+                    src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103641/IMG_3220_vulr2q.png', 400)}
+                    width={800}
+                    height={800}
+                    sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
                     alt="KickBackStyles ロンT 黒 表"
                     className="h-full w-auto scale-90 object-cover sm:scale-105 sm:group-hover:hidden"
                     loading="lazy"
@@ -100,17 +114,21 @@ export default function Home(): JSX.Element {
                   <picture>
                     <source
                       media="(min-width: 1024px)"
-                      srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_800,f_auto,q_auto/v1743103655/IMG_1248_SP.JPG_03-26-23-263_imuuob.jpg 800w"
+                      srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103655/IMG_1248_SP.JPG_03-26-23-263_imuuob.jpg', 800)} 800w,
+                        ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103655/IMG_1248_SP.JPG_03-26-23-263_imuuob.jpg', 600)} 600w`}
+                      sizes="800px"
                     />
                     <source
                       media="(min-width: 640px)"
-                      srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_600,f_auto,q_auto/v1743103655/IMG_1248_SP.JPG_03-26-23-263_imuuob.jpg 600w"
+                      srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103655/IMG_1248_SP.JPG_03-26-23-263_imuuob.jpg', 600)} 600w,
+                        ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103655/IMG_1248_SP.JPG_03-26-23-263_imuuob.jpg', 400)} 400w`}
+                      sizes="600px"
                     />
                     <CldImage
-                      src="https://res.cloudinary.com/dvahtyhva/image/upload/w_400,f_auto,q_auto/v1743103655/IMG_1248_SP.JPG_03-26-23-263_imuuob.jpg"
-                      width={1200}
-                      height={1200}
-                      sizes="100vw"
+                      src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103655/IMG_1248_SP.JPG_03-26-23-263_imuuob.jpg', 400)}
+                      width={800}
+                      height={800}
+                      sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
                       alt="KickBackStyles ロンT 黒 裏"
                       className="object-cover sm:h-full sm:w-auto"
                       loading="lazy"
@@ -134,17 +152,21 @@ export default function Home(): JSX.Element {
                 <picture>
                   <source
                     media="(min-width: 1024px)"
-                    srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_800,f_auto,q_auto/v1743103643/IMG_3224_x04516.png 800w"
+                    srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3224_x04516.png', 800)} 800w,
+                      ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3224_x04516.png', 600)} 600w`}
+                    sizes="800px"
                   />
                   <source
                     media="(min-width: 640px)"
-                    srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_600,f_auto,q_auto/v1743103643/IMG_3224_x04516.png 600w"
+                    srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3224_x04516.png', 600)} 600w,
+                      ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3224_x04516.png', 400)} 400w`}
+                    sizes="600px"
                   />
                   <CldImage
-                    src="https://res.cloudinary.com/dvahtyhva/image/upload/w_400,f_auto,q_auto/v1743103643/IMG_3224_x04516.png"
-                    width={1200}
-                    height={1200}
-                    sizes="100vw"
+                    src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3224_x04516.png', 400)}
+                    width={800}
+                    height={800}
+                    sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
                     alt="KickBackStyles ロンT 緑 表"
                     className="h-auto w-full object-cover sm:scale-95 sm:group-hover:hidden"
                     loading="lazy"
@@ -154,17 +176,21 @@ export default function Home(): JSX.Element {
                   <picture>
                     <source
                       media="(min-width: 1024px)"
-                      srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_800,f_auto,q_auto/v1743103652/IMG_1317_SP.JPG_03-26-23-559_wgw0u1.jpg 800w"
+                      srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103652/IMG_1317_SP.JPG_03-26-23-559_wgw0u1.jpg', 800)} 800w,
+                        ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103652/IMG_1317_SP.JPG_03-26-23-559_wgw0u1.jpg', 600)} 600w`}
+                      sizes="800px"
                     />
                     <source
                       media="(min-width: 640px)"
-                      srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_600,f_auto,q_auto/v1743103652/IMG_1317_SP.JPG_03-26-23-559_wgw0u1.jpg 600w"
+                      srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103652/IMG_1317_SP.JPG_03-26-23-559_wgw0u1.jpg', 600)} 600w,
+                        ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103652/IMG_1317_SP.JPG_03-26-23-559_wgw0u1.jpg', 400)} 400w`}
+                      sizes="600px"
                     />
                     <CldImage
-                      src="https://res.cloudinary.com/dvahtyhva/image/upload/w_400,f_auto,q_auto/v1743103652/IMG_1317_SP.JPG_03-26-23-559_wgw0u1.jpg"
-                      width={1200}
-                      height={1200}
-                      sizes="100vw"
+                      src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103652/IMG_1317_SP.JPG_03-26-23-559_wgw0u1.jpg', 400)}
+                      width={800}
+                      height={800}
+                      sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
                       alt="KickBackStyles ロンT 緑 裏"
                       className="h-auto w-full object-cover"
                       loading="lazy"
@@ -188,17 +214,21 @@ export default function Home(): JSX.Element {
                 <picture>
                   <source
                     media="(min-width: 1024px)"
-                    srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_800,f_auto,q_auto/v1743103643/IMG_3225_nr1xu5.png 800w"
+                    srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3225_nr1xu5.png', 800)} 800w,
+                      ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3225_nr1xu5.png', 600)} 600w`}
+                    sizes="800px"
                   />
                   <source
                     media="(min-width: 640px)"
-                    srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_600,f_auto,q_auto/v1743103643/IMG_3225_nr1xu5.png 600w"
+                    srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3225_nr1xu5.png', 600)} 600w,
+                      ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3225_nr1xu5.png', 400)} 400w`}
+                    sizes="600px"
                   />
                   <CldImage
-                    src="https://res.cloudinary.com/dvahtyhva/image/upload/w_400,f_auto,q_auto/v1743103643/IMG_3225_nr1xu5.png"
-                    width={1200}
-                    height={1200}
-                    sizes="100vw"
+                    src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3225_nr1xu5.png', 400)}
+                    width={800}
+                    height={800}
+                    sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
                     alt="KickBackStyles ロンT ピンク 表"
                     className="h-full w-auto scale-85 object-cover sm:scale-105 sm:group-hover:hidden"
                     loading="lazy"
@@ -208,17 +238,21 @@ export default function Home(): JSX.Element {
                   <picture>
                     <source
                       media="(min-width: 1024px)"
-                      srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_800,f_auto,q_auto/v1743103650/IMG_1333_SP_hgtgi1.jpg 800w"
+                      srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103650/IMG_1333_SP_hgtgi1.jpg', 800)} 800w,
+                        ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103650/IMG_1333_SP_hgtgi1.jpg', 600)} 600w`}
+                      sizes="800px"
                     />
                     <source
                       media="(min-width: 640px)"
-                      srcSet="https://res.cloudinary.com/dvahtyhva/image/upload/w_600,f_auto,q_auto/v1743103650/IMG_1333_SP_hgtgi1.jpg 600w"
+                      srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103650/IMG_1333_SP_hgtgi1.jpg', 600)} 600w,
+                        ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103650/IMG_1333_SP_hgtgi1.jpg', 400)} 400w`}
+                      sizes="600px"
                     />
                     <CldImage
-                      src="https://res.cloudinary.com/dvahtyhva/image/upload/w_400,f_auto,q_auto/v1743103650/IMG_1333_SP_hgtgi1.jpg"
-                      width={1200}
-                      height={1200}
-                      sizes="100vw"
+                      src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103650/IMG_1333_SP_hgtgi1.jpg', 400)}
+                      width={800}
+                      height={800}
+                      sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
                       alt="KickBackStyles ロンT ピンク 裏"
                       className="object-cover sm:h-full sm:w-auto"
                       loading="lazy"

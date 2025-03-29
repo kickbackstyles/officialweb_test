@@ -5,6 +5,7 @@ import { CldImage } from 'next-cloudinary'
 import React, { useState } from 'react'
 import Button from '../../../button/Button/Button'
 import '../Ukv.modules.css'
+import { getOptimizedImageUrl } from '../../../Hooks/getOptimizedUrl'
 
 interface Image {
   id: number
@@ -73,17 +74,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
   )
   const selectedImages = selectedColor ? selectedColor?.images : []
 
-  const getOptimizedImageUrl = (url: string, width: number) => {
-    try {
-      const baseUrl = url.split('/upload/')[0] + '/upload/';
-      const imagePath = url.split('/upload/')[1];
-      return `${baseUrl}w_${width},f_auto,q_auto/${imagePath}`;
-    } catch (error) {
-      // エラーが発生した場合は元のURLを返す
-      console.error('Error optimizing image URL:', error);
-      return url;
-    }
-  };
+
 
   return (
     <div>
@@ -98,6 +89,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
             className={`sm:absolute sm:h-auto sm:w-full ${imgPosition} `}
             style={{ objectFit: 'cover' }}
             priority
+            sizes="(max-width: 767px) 100vw, 1440px"
           />
         </div>
 
@@ -117,10 +109,14 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
                 {color.images.map((image, index) => (
                   <SplideSlide key={index}>
                     {/* 画像は縦より横の方が大きく切る */}
-                    <img
-                      src={`${getOptimizedImageUrl(image.url, 500)}`}
+                    <CldImage
+                      src={`${getOptimizedImageUrl(image.url, 800)}`}
+                      width={800}
+                      height={800}
                       className="h-full object-cover"
                       alt={image.alt}
+                      loading="lazy"
+                      sizes="(max-width: 767px) 100vw, 800px"
                     />
                   </SplideSlide>
                 ))}
@@ -164,10 +160,12 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
                   <CldImage
                     src={`${getOptimizedImageUrl(color.images[0].url, 300)}`}
                     width={300}
-                    height={400}
+                    height={300}
                     style={{ objectFit: 'cover' }}
                     className=""
                     alt="color1"
+                    loading="lazy"
+                    sizes="300px"
                   />
                 </li>
               ))}
@@ -218,6 +216,8 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
                       style={{ objectFit: 'cover' }}
                       className="sm:h-auto sm:w-full"
                       alt="color1"
+                      loading="lazy"
+                      sizes="300px"
                     />
                   </li>
                 ))}
@@ -242,10 +242,12 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
                     <CldImage
                       src={`${getOptimizedImageUrl(image.url, 500)}`}
                       width={500}
-                      height={800}
+                      height={500}
                       style={{ objectFit: 'cover' }}
                       className="sm:size-full"
                       alt={image.alt}
+                      loading="lazy"
+                      sizes="(max-width: 767px) 46vw, (max-width: 1023px) 500px, 1000px"
                     />
                   </li>
                 ))}
