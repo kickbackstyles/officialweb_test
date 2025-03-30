@@ -40,7 +40,7 @@ const Ukv: React.FC<UkvProps> = ({
     <div>
       <div className="absolute left-0 top-0 z-0 hidden h-[17.01vw] w-full border-b-1 border-black sm:block"></div>
       <div className="sm:mb-xl sm:flex sm:items-end ">
-        <div className="relative h-[144vw] w-full overflow-hidden sm:z-10 sm:flex sm:h-[48vw] sm:w-5xl sm:items-center sm:justify-center">
+        <div className="relative h-[128vw] w-full overflow-hidden sm:z-10 sm:flex sm:h-[48vw] sm:w-5xl sm:items-center sm:justify-center">
           <picture>
             {/* PC用画像 */}
             <source
