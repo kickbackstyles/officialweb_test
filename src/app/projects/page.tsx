@@ -12,7 +12,7 @@ const getProjects = async (searchParams: {
   [key: string]: string | string[] | undefined
 }) => {
   const paramValue = searchParams['q'] || ''
-  // string型に絞り込む
+
   const searchParam =
     typeof paramValue === 'string'
       ? paramValue
@@ -73,7 +73,9 @@ const Projects = async ({
       </div>
       <div>
         <div className="flex w-full flex-col sm:flex-row sm:flex-wrap">
-          {projects.map((project, index) => (
+
+
+          {projects?.map((project, index) => (
             <Link
               key={index}
               href={`/projects/${project.id}`}
@@ -120,6 +122,18 @@ const Projects = async ({
               </div>
             </Link>
           ))}
+        </div>
+        <div className='h-5xl flex flex-col items-center justify-center sm:h-4xl'>
+          <div className="relative mb-xl size-2xl sm:mb-md sm:size-lg">
+            <ImageComp
+              src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103638/kbs_logo_wwedmt.png"
+              width={200}
+              height={200}
+              alt="KickBackStyles logo"
+              className="h-auto w-full"
+            />
+          </div>
+          <h2 className="text-md text-black sm:text-md-pc">ComingSoon...!</h2>
         </div>
       </div>
       <AboutSection />

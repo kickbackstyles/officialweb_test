@@ -45,6 +45,7 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
           <Link
             href="/"
             className="block h-[13.1vw] w-2xl sm:fixed sm:top-md sm:size-lg"
+
           >
             <CldImage
               src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103638/kbs_web_logo_qh6ka2.png', 500)}
@@ -120,7 +121,9 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
           className={`${isMenuOpen ? 'visible overscroll-contain opacity-100' : 'invisible overscroll-auto opacity-0'} hamburger-menu fixed z-20 h-[92vh] w-full overflow-y-auto bg-white duration-300 sm:hidden`}
         >
           <div className="flex">
-            <Link href="/items" className="relative block w-full">
+            <Link href="/items?q=newarrivals" className="relative block w-full"  {...(pathname == '/items'
+              ? { onClick: () => setIsMenuOpen(!isMenuOpen) }
+              : {})}>
               <div className="relative h-5xl w-full">
                 <CldImage
                   src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743146322/IMG_1288_SP_mvmpxb.jpg', 400)}
@@ -136,7 +139,9 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
                 NewArrival
               </p>
             </Link>
-            <Link href="/items" className="relative block w-full">
+            <Link href="/projects/crowdfunding" className="relative block w-full" {...(pathname === '/projects/crowdfunding'
+              ? { onClick: () => setIsMenuOpen(!isMenuOpen) }
+              : {})}>
               <div className="relative h-5xl w-full">
                 <CldImage
                   src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103667/IMG_1350_SP.JPG_03-26-23-714_d7wkqq.jpg', 400)}
