@@ -53,8 +53,8 @@ const AboutSection = (): JSX.Element => {
             {/* SP用画像 */}
             <source
               media="(max-width: 639px)"
-              srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743241755/IMG_1278_ni8hxd_s71vqh.jpg', 828)} 828w,
-                ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743241755/IMG_1278_ni8hxd_s71vqh.jpg', 640)} 640w`}
+              srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743317760/IMG_1255_SP.JPG_03-26-23-306_jx94pn_c_fill_w_1500_h_2000_wwxtrd.jpg', 828)} 828w,
+                ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743317760/IMG_1255_SP.JPG_03-26-23-306_jx94pn_c_fill_w_1500_h_2000_wwxtrd.jpg', 640)} 640w`}
               sizes="100vw"
             />
             <CldImage
@@ -62,7 +62,7 @@ const AboutSection = (): JSX.Element => {
               ref={ref}
               width={1440}
               height={960}
-              className="absolute object-cover top-[-40%] h-full w-auto scale-125 sm:left-auto sm:top-[-30%] sm:block sm:h-auto sm:w-full sm:scale-110"
+              className="absolute object-cover top-[-28%] right-0 h-full w-auto scale-125 sm:left-auto sm:top-[-30%] sm:block sm:h-auto sm:w-full sm:scale-110"
               alt="aboutus image"
               loading="lazy"
               sizes="(max-width: 639px) 100vw, (max-width: 1023px) 1024px, 1440px"

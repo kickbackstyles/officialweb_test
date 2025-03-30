@@ -36,7 +36,7 @@ export default function Home(): JSX.Element {
             />
           </picture>
 
-          <div className="absolute bottom-2xl left-md ">
+          <div className="absolute bottom-[18%] left-md ">
             <h1 className="w-3/5 text-md leading-md text-white sm:w-full sm:text-md-pc">
               @kickbackstyles.official
               <br />
@@ -63,10 +63,16 @@ export default function Home(): JSX.Element {
                 sizes="1000px"
               />
               <source
+                media="(min-width: 640px)"
+                srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743106008/IMG_1344_rhkg3e.jpg', 750)} 750w,
+                  ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743106008/IMG_1344_rhkg3e.jpg', 500)} 500w`}
+                sizes="100vw"
+              />
+              <source
                 media="(max-width: 639px)"
                 srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743106008/IMG_1344_rhkg3e.jpg', 750)} 750w,
                   ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743106008/IMG_1344_rhkg3e.jpg', 500)} 500w`}
-                sizes="750px"
+                sizes="100vw"
               />
               <CldImage
                 src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743106008/IMG_1344_rhkg3e.jpg', 500)}
