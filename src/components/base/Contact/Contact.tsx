@@ -72,7 +72,7 @@ const Contact = (): JSX.Element => {
   }
 
   return (
-    <div className="container flex h-screen items-center border-none sm:h-auto">
+    <div className="container flex h-[210vw] items-center border-none sm:h-auto">
       <div className="mx-md w-full sm:mb-xl sm:ml-2xl sm:mt-2xl lg:w-3/5">
         <h2 className="mb-xl text-md font-bold sm:mb-lg sm:text-md-pc">
           お問い合わせ

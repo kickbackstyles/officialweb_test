@@ -12,7 +12,7 @@ export default function Home(): JSX.Element {
     <div>
       <Header />
       <div className="kv">
-        <div className="relative h-[161.8vw] w-full sm:h-5xl">
+        <div className="relative h-[168vw] w-full sm:h-5xl">
           <picture>
             <source
               media="(min-width: 1024px)"
@@ -36,11 +36,11 @@ export default function Home(): JSX.Element {
             />
           </picture>
 
-          <div className="absolute bottom-[18%] left-md ">
+          <div className="absolute bottom-2xl sm:bottom-[18%] left-md ">
             <h1 className="w-3/5 text-md leading-md text-white sm:w-full sm:text-md-pc">
               @kickbackstyles.official
               <br />
-              2025.04.01 21:00 Releases First Item...!
+              2025.04.01 21:00~ Releases First Item...!
             </h1>
           </div>
         </div>
@@ -146,7 +146,7 @@ export default function Home(): JSX.Element {
                   <p className="text-sm leading-md sm:text-sm-pc sm:group-hover:text-white">
                     BackTextLongSleeve
                   </p>
-                  <p className="sm:group-hover:text-white">¥4,500</p>
+                  <p className="sm:group-hover:text-white">¥7,400</p>
                 </div>
               </Link>
             </li>
@@ -208,7 +208,7 @@ export default function Home(): JSX.Element {
                   <p className="text-sm leading-md sm:text-sm-pc sm:group-hover:text-white">
                     BackTextLongSleeve
                   </p>
-                  <p className="sm:group-hover:text-white">¥4,500</p>
+                  <p className="sm:group-hover:text-white">¥7,400</p>
                 </div>
               </Link>
             </li>
@@ -270,7 +270,7 @@ export default function Home(): JSX.Element {
                   <p className="text-sm leading-md sm:text-sm-pc sm:group-hover:text-white">
                     BackTextLongSleeve
                   </p>
-                  <p className="sm:group-hover:text-white">¥4,500</p>
+                  <p className="sm:group-hover:text-white">¥7,400</p>
                 </div>
               </Link>
             </li>
@@ -283,7 +283,7 @@ export default function Home(): JSX.Element {
 
                 <div className='absolute left-sm bottom-xs'>
                   <p className='text-sm sm:text-sm-pc text-black leading-md'>BackTextLongSleeve</p>
-                  <p>¥4,500</p>
+                  <p>¥7,400</p>
                 </div>
               </Link>
             </li> */}
