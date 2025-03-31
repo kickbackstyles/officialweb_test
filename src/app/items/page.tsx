@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import AboutSection from '../../components/base/AboutSection/AboutSection'
 import Footer from '../../components/base/Footer/Footer'
@@ -6,11 +7,11 @@ import Header from '../../components/base/Header/Header'
 import ProjectsSection from '../../components/base/ProjectsSection/ProjectsSection'
 import Ukv from '../../components/base/Ukv/Ukv/Ukv'
 import ImageComp from '../../components/image/ImageComp/ImageComp'
-import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Items | KickBackStyles',
-  description: 'KickbackStyles初のアイテムが登場! With All My Love ロングスリーブTシャツをチェック!',
+  description:
+    'KickbackStyles初のアイテムが登場! With All My Love ロングスリーブTシャツをチェック!',
 }
 
 const prisma = new PrismaClient()
@@ -127,16 +128,17 @@ const Items = async ({
           {items.map((item, index) => (
             <li
               className={`relative flex h-[72.8vw] w-1/2 items-center border-black bg-white sm:h-[44.41vw] sm:w-[calc(100%/3)] 
-                                ${index === 0
-                  ? 'border-1'
-                  : index === 1
-                    ? 'border-y-1 border-r-1'
-                    : index === 2
-                      ? 'border-b-1 border-r-1 sm:border-y-1 sm:border-r-1'
-                      : index > 2
-                        ? 'border-b-1 border-r-1'
-                        : ''
-                }`}
+                                ${
+                                  index === 0
+                                    ? 'border-1'
+                                    : index === 1
+                                      ? 'border-y-1 border-r-1'
+                                      : index === 2
+                                        ? 'border-b-1 border-r-1 sm:border-y-1 sm:border-r-1'
+                                        : index > 2
+                                          ? 'border-b-1 border-r-1'
+                                          : ''
+                                }`}
               key={index}
             >
               <Link

@@ -23,17 +23,17 @@ const getProjects = async (searchParams: {
   const projects = await prisma.project.findMany({
     where: searchParam
       ? {
-        projectTags: {
-          some: {
-            projectTag: {
-              title: {
-                contains: searchParam, // 文字列として扱う
-                mode: 'insensitive',
+          projectTags: {
+            some: {
+              projectTag: {
+                title: {
+                  contains: searchParam, // 文字列として扱う
+                  mode: 'insensitive',
+                },
               },
             },
           },
-        },
-      }
+        }
       : {},
     orderBy: {
       id: 'asc',
@@ -73,8 +73,6 @@ const Projects = async ({
       </div>
       <div>
         <div className="flex w-full flex-col sm:flex-row sm:flex-wrap">
-
-
           {projects?.map((project, index) => (
             <Link
               key={index}
@@ -123,7 +121,7 @@ const Projects = async ({
             </Link>
           ))}
         </div>
-        <div className='h-5xl flex flex-col items-center justify-center sm:h-4xl'>
+        <div className="flex h-5xl flex-col items-center justify-center sm:h-4xl">
           <div className="relative mb-xl size-2xl sm:mb-md sm:size-lg">
             <ImageComp
               src="https://res.cloudinary.com/dvahtyhva/image/upload/v1743103638/kbs_logo_wwedmt.png"

@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
+  images: {
     // 画像の最適化を有効化
     unoptimized: false,
     // 必要な外部ドメインを追加
@@ -11,8 +11,7 @@ const nextConfig = {
   // 実験的な最適化機能を有効化
   experimental: {
     optimizeCss: true,
-  }
-
+  },
 }
 
 export default nextConfig

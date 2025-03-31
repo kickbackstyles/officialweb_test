@@ -3,9 +3,9 @@ import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css/core'
 import { CldImage } from 'next-cloudinary'
 import React, { useState } from 'react'
+import { getOptimizedImageUrl } from '../../../Hooks/getOptimizedUrl'
 import Button from '../../../button/Button/Button'
 import '../Ukv.modules.css'
-import { getOptimizedImageUrl } from '../../../Hooks/getOptimizedUrl'
 
 interface Image {
   id: number
@@ -74,8 +74,6 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
   )
   const selectedImages = selectedColor ? selectedColor?.images : []
 
-
-
   return (
     <div>
       <div className="absolute left-0 top-0 z-0 hidden h-[17.01vw] w-full border-b-1 border-black sm:block"></div>
@@ -98,7 +96,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
               src={`${getOptimizedImageUrl(selectedImages[0].url, 1024)}`}
               sizes="(max-width: 767px) 767px, 1024px"
               alt="key visual"
-              className='sm:absolute sm:h-auto sm:w-full sm:left-0 sm:top-[-20%]'
+              className="sm:absolute sm:left-0 sm:top-[-20%] sm:h-auto sm:w-full"
             />
           </picture>
         </div>

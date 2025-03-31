@@ -5,10 +5,10 @@ import { Providers } from '../../providers'
 import GoogleAnalytics from '../components/GoogleAnalytics/GoogleAnalytics'
 import './globals.css'
 
-
 export const metadata: Metadata = {
   title: 'オフィシャルサイト | KickBackStyles',
-  description: 'KickBackStyles公式サイト | 4/1 21:00〜 初アイテム発売！ WAMLロングスリーブTシャツが登場。今ならShopify10名様限定40%オフセール実施中🔥 限定セールをお見逃しなく！',
+  description:
+    'KickBackStyles公式サイト | 4/1 21:00〜 初アイテム発売！ WAMLロングスリーブTシャツが登場。今ならShopify10名様限定40%オフセール実施中🔥 限定セールをお見逃しなく！',
 }
 
 const hackNard = localfont({

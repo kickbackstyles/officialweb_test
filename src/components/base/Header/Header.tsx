@@ -15,14 +15,14 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
 
   const getOptimizedImageUrl = (url: string, width: number) => {
     try {
-      const baseUrl = url.split('/upload/')[0] + '/upload/';
-      const imagePath = url.split('/upload/')[1];
-      return `${baseUrl}w_${width},f_auto,q_auto,c_scale,dpr_auto/${imagePath}`;
+      const baseUrl = url.split('/upload/')[0] + '/upload/'
+      const imagePath = url.split('/upload/')[1]
+      return `${baseUrl}w_${width},f_auto,q_auto,c_scale,dpr_auto/${imagePath}`
     } catch (error) {
-      console.error('Error optimizing image URL:', error);
-      return url;
+      console.error('Error optimizing image URL:', error)
+      return url
     }
-  };
+  }
 
   return (
     <>
@@ -45,10 +45,12 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
           <Link
             href="/"
             className="block h-[13.1vw] w-2xl sm:fixed sm:top-md sm:size-lg"
-
           >
             <CldImage
-              src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103638/kbs_web_logo_qh6ka2.png', 500)}
+              src={getOptimizedImageUrl(
+                'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103638/kbs_web_logo_qh6ka2.png',
+                500,
+              )}
               width={500}
               height={500}
               className="h-auto w-full object-cover"
@@ -59,7 +61,10 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
           </Link>
           <div className="relative size-[8vw] sm:hidden">
             <CldImage
-              src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103637/shopping-bag-svgrepo-com_mqgl0y.svg', 100)}
+              src={getOptimizedImageUrl(
+                'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103637/shopping-bag-svgrepo-com_mqgl0y.svg',
+                100,
+              )}
               fill
               className="object-cover"
               alt="shopping bag"
@@ -121,12 +126,19 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
           className={`${isMenuOpen ? 'visible overscroll-contain opacity-100' : 'invisible overscroll-auto opacity-0'} hamburger-menu fixed z-20 h-[92vh] w-full overflow-y-auto bg-white duration-300 sm:hidden`}
         >
           <div className="flex">
-            <Link href="/items?q=newarrivals" className="relative block w-full"  {...(pathname == '/items'
-              ? { onClick: () => setIsMenuOpen(!isMenuOpen) }
-              : {})}>
+            <Link
+              href="/items?q=newarrivals"
+              className="relative block w-full"
+              {...(pathname == '/items'
+                ? { onClick: () => setIsMenuOpen(!isMenuOpen) }
+                : {})}
+            >
               <div className="relative h-5xl w-full">
                 <CldImage
-                  src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743146322/IMG_1288_SP_mvmpxb.jpg', 400)}
+                  src={getOptimizedImageUrl(
+                    'https://res.cloudinary.com/dvahtyhva/image/upload/v1743146322/IMG_1288_SP_mvmpxb.jpg',
+                    400,
+                  )}
                   width={400}
                   height={1000}
                   alt="New Arrivals"
@@ -139,12 +151,19 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
                 NewArrival
               </p>
             </Link>
-            <Link href="/projects/crowdfunding" className="relative block w-full" {...(pathname === '/projects/crowdfunding'
-              ? { onClick: () => setIsMenuOpen(!isMenuOpen) }
-              : {})}>
+            <Link
+              href="/projects/crowdfunding"
+              className="relative block w-full"
+              {...(pathname === '/projects/crowdfunding'
+                ? { onClick: () => setIsMenuOpen(!isMenuOpen) }
+                : {})}
+            >
               <div className="relative h-5xl w-full">
                 <CldImage
-                  src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103667/IMG_1350_SP.JPG_03-26-23-714_d7wkqq.jpg', 400)}
+                  src={getOptimizedImageUrl(
+                    'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103667/IMG_1350_SP.JPG_03-26-23-714_d7wkqq.jpg',
+                    400,
+                  )}
                   width={400}
                   height={1000}
                   alt="Crowdfunding"
@@ -170,7 +189,10 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
                 <p>Items</p>
                 <div className="relative h-sm w-[1.25vw]">
                   <CldImage
-                    src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103639/arrowtoright_dko3cl.png', 20)}
+                    src={getOptimizedImageUrl(
+                      'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103639/arrowtoright_dko3cl.png',
+                      20,
+                    )}
                     fill
                     alt="arrow to right"
                     className="object-cover"
@@ -190,7 +212,10 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
                 <p>Gift</p>
                 <div className="relative h-sm w-[1.25vw]">
                   <CldImage
-                    src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103639/arrowtoright_dko3cl.png', 20)}
+                    src={getOptimizedImageUrl(
+                      'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103639/arrowtoright_dko3cl.png',
+                      20,
+                    )}
                     fill
                     alt="arrow to right"
                     className="object-cover"
@@ -210,7 +235,10 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
                 <p>AboutUs</p>
                 <div className="relative h-sm w-[1.25vw]">
                   <CldImage
-                    src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103639/arrowtoright_dko3cl.png', 20)}
+                    src={getOptimizedImageUrl(
+                      'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103639/arrowtoright_dko3cl.png',
+                      20,
+                    )}
                     fill
                     alt="arrow to right"
                     className="object-cover"
@@ -230,7 +258,10 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
                 <p>Projects</p>
                 <div className="relative h-sm w-[1.25vw]">
                   <CldImage
-                    src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103639/arrowtoright_dko3cl.png', 20)}
+                    src={getOptimizedImageUrl(
+                      'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103639/arrowtoright_dko3cl.png',
+                      20,
+                    )}
                     fill
                     alt="arrow to right"
                     className="object-cover"
@@ -248,7 +279,10 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
               >
                 <div className="relative size-lg">
                   <CldImage
-                    src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103638/instagram_wyvwbt.png', 100)}
+                    src={getOptimizedImageUrl(
+                      'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103638/instagram_wyvwbt.png',
+                      100,
+                    )}
                     fill
                     alt="instagram icon"
                     className="object-cover"
@@ -263,7 +297,10 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
               >
                 <div className="relative h-lg w-[4.74vw]">
                   <CldImage
-                    src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103637/tiktok_al5d9j.png', 100)}
+                    src={getOptimizedImageUrl(
+                      'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103637/tiktok_al5d9j.png',
+                      100,
+                    )}
                     fill
                     alt="tiktok icon"
                     className="object-cover"

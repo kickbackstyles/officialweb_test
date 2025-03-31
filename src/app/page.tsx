@@ -1,17 +1,14 @@
 'use client'
 import { CldImage } from 'next-cloudinary'
 import Link from 'next/link'
-import { Metadata } from 'next'
+import { getOptimizedImageUrl } from '../components/Hooks/getOptimizedUrl'
 import AboutSection from '../components/base/AboutSection/AboutSection'
 import Footer from '../components/base/Footer/Footer'
 import Header from '../components/base/Header/Header'
 import ProjectsSection from '../components/base/ProjectsSection/ProjectsSection'
-import { getOptimizedImageUrl } from '../components/Hooks/getOptimizedUrl'
-
 
 export default function Home(): JSX.Element {
   return (
-
     <div>
       <Header />
       <div className="kv">
@@ -30,16 +27,19 @@ export default function Home(): JSX.Element {
               sizes="767px"
             />
             <CldImage
-              src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743244000/IMG_1330_wx8wld_c_fill_w_2000_h_1400_e_improve_e_sharpen_cnycht.jpg', 1024)}
+              src={getOptimizedImageUrl(
+                'https://res.cloudinary.com/dvahtyhva/image/upload/v1743244000/IMG_1330_wx8wld_c_fill_w_2000_h_1400_e_improve_e_sharpen_cnycht.jpg',
+                1024,
+              )}
               sizes="(max-width: 639px) 767px, (max-width: 1023px) 1024px, 1440px"
               fill
-              className="w-auto h-full sm:w-full sm:h-auto top-0 left-0 object-cover brightness-[0.8]"
+              className="left-0 top-0 h-full w-auto object-cover brightness-[0.8] sm:h-auto sm:w-full"
               alt="key visual"
               priority
             />
           </picture>
 
-          <div className="absolute bottom-2xl sm:bottom-[18%] left-md ">
+          <div className="absolute bottom-2xl left-md sm:bottom-[18%] ">
             <h1 className="w-3/5 text-md leading-md text-white sm:w-full sm:text-md-pc">
               @kickbackstyles.official
               <br />
@@ -57,7 +57,7 @@ export default function Home(): JSX.Element {
               <div className="size-xxs bg-white sm:size-xxxxs"></div>
             </div>
           </div>
-          <Link href="/items" className="group block size-full relative">
+          <Link href="/items" className="group relative block size-full">
             <picture>
               <source
                 media="(min-width: 1024px)"
@@ -78,7 +78,10 @@ export default function Home(): JSX.Element {
                 sizes="100vw"
               />
               <CldImage
-                src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743106008/IMG_1344_rhkg3e.jpg', 500)}
+                src={getOptimizedImageUrl(
+                  'https://res.cloudinary.com/dvahtyhva/image/upload/v1743106008/IMG_1344_rhkg3e.jpg',
+                  500,
+                )}
                 fill
                 style={{ objectFit: 'cover' }}
                 alt="Section items visual"
@@ -110,7 +113,10 @@ export default function Home(): JSX.Element {
                     sizes="600px"
                   />
                   <CldImage
-                    src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103641/IMG_3220_vulr2q.png', 400)}
+                    src={getOptimizedImageUrl(
+                      'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103641/IMG_3220_vulr2q.png',
+                      400,
+                    )}
                     width={800}
                     height={800}
                     sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
@@ -134,7 +140,10 @@ export default function Home(): JSX.Element {
                       sizes="600px"
                     />
                     <CldImage
-                      src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103655/IMG_1248_SP.JPG_03-26-23-263_imuuob.jpg', 400)}
+                      src={getOptimizedImageUrl(
+                        'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103655/IMG_1248_SP.JPG_03-26-23-263_imuuob.jpg',
+                        400,
+                      )}
                       width={800}
                       height={800}
                       sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
@@ -172,7 +181,10 @@ export default function Home(): JSX.Element {
                     sizes="600px"
                   />
                   <CldImage
-                    src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3224_x04516.png', 400)}
+                    src={getOptimizedImageUrl(
+                      'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3224_x04516.png',
+                      400,
+                    )}
                     width={800}
                     height={800}
                     sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
@@ -196,7 +208,10 @@ export default function Home(): JSX.Element {
                       sizes="600px"
                     />
                     <CldImage
-                      src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103652/IMG_1317_SP.JPG_03-26-23-559_wgw0u1.jpg', 400)}
+                      src={getOptimizedImageUrl(
+                        'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103652/IMG_1317_SP.JPG_03-26-23-559_wgw0u1.jpg',
+                        400,
+                      )}
                       width={800}
                       height={800}
                       sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
@@ -234,7 +249,10 @@ export default function Home(): JSX.Element {
                     sizes="600px"
                   />
                   <CldImage
-                    src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3225_nr1xu5.png', 400)}
+                    src={getOptimizedImageUrl(
+                      'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3225_nr1xu5.png',
+                      400,
+                    )}
                     width={800}
                     height={800}
                     sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
@@ -258,7 +276,10 @@ export default function Home(): JSX.Element {
                       sizes="600px"
                     />
                     <CldImage
-                      src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103650/IMG_1333_SP_hgtgi1.jpg', 400)}
+                      src={getOptimizedImageUrl(
+                        'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103650/IMG_1333_SP_hgtgi1.jpg',
+                        400,
+                      )}
                       width={800}
                       height={800}
                       sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"

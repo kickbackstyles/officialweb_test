@@ -1,12 +1,16 @@
 import { PrismaClient } from '@prisma/client'
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Footer from '../../../components/base/Footer/Footer'
 import Header from '../../../components/base/Header/Header'
 import SingleUkv from '../../../components/base/Ukv/SIngleUkv/SingleUkv'
-import type { Metadata } from 'next'
 const prisma = new PrismaClient()
 
-export const generateMetadata = async ({ params }: { params: { id: string } }): Promise<Metadata> => {
+export const generateMetadata = async ({
+  params,
+}: {
+  params: { id: string }
+}): Promise<Metadata> => {
   // ブログの詳細データを取得する関数
   const itemData = await prisma.item.findUnique({
     where: { id: Number(params.id) },
@@ -28,8 +32,8 @@ export const generateMetadata = async ({ params }: { params: { id: string } }): 
 
   return {
     title: itemData?.title,
-    description: itemData?.context
-  };
+    description: itemData?.context,
+  }
 }
 
 interface Image {

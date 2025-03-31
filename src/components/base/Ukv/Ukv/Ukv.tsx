@@ -27,15 +27,15 @@ const Ukv: React.FC<UkvProps> = ({
 }) => {
   const getOptimizedImageUrl = (url: string, width: number) => {
     try {
-      const baseUrl = url.split('/upload/')[0] + '/upload/';
-      const imagePath = url.split('/upload/')[1];
-      return `${baseUrl}w_${width},f_auto,q_auto,c_scale,dpr_auto/${imagePath}`;
+      const baseUrl = url.split('/upload/')[0] + '/upload/'
+      const imagePath = url.split('/upload/')[1]
+      return `${baseUrl}w_${width},f_auto,q_auto,c_scale,dpr_auto/${imagePath}`
     } catch (error) {
       // エラーが発生した場合は元のURLを返す
-      console.error('Error optimizing image URL:', error);
-      return url;
+      console.error('Error optimizing image URL:', error)
+      return url
     }
-  };
+  }
   return (
     <div>
       <div className="absolute left-0 top-0 z-0 hidden h-[17.01vw] w-full border-b-1 border-black sm:block"></div>
@@ -45,15 +45,22 @@ const Ukv: React.FC<UkvProps> = ({
             {/* PC用画像 */}
             <source
               media="(min-width: 640px)"
-              srcSet={src ? `${getOptimizedImageUrl(src, 1440)} 1440w,
-            ${getOptimizedImageUrl(src, 1024)} 1024w` : ''}
-
+              srcSet={
+                src
+                  ? `${getOptimizedImageUrl(src, 1440)} 1440w,
+            ${getOptimizedImageUrl(src, 1024)} 1024w`
+                  : ''
+              }
             />
             {/* SP用画像 */}
             <source
               media="(max-width: 639px)"
-              srcSet={srcSp ? `${getOptimizedImageUrl(srcSp, 639)} 639w,
-                ${getOptimizedImageUrl(srcSp, 480)} 480w` : ''}
+              srcSet={
+                srcSp
+                  ? `${getOptimizedImageUrl(srcSp, 639)} 639w,
+                ${getOptimizedImageUrl(srcSp, 480)} 480w`
+                  : ''
+              }
               sizes="100vw"
             />
             <CldImage

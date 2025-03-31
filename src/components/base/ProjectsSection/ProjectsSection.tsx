@@ -13,14 +13,14 @@ const ProjectsSection = (): JSX.Element => {
 
   const getOptimizedImageUrl = (url: string, width: number) => {
     try {
-      const baseUrl = url.split('/upload/')[0] + '/upload/';
-      const imagePath = url.split('/upload/')[1];
-      return `${baseUrl}w_${width},f_auto,q_auto,c_scale,dpr_auto/${imagePath}`;
+      const baseUrl = url.split('/upload/')[0] + '/upload/'
+      const imagePath = url.split('/upload/')[1]
+      return `${baseUrl}w_${width},f_auto,q_auto,c_scale,dpr_auto/${imagePath}`
     } catch (error) {
-      console.error('Error optimizing image URL:', error);
-      return url;
+      console.error('Error optimizing image URL:', error)
+      return url
     }
-  };
+  }
 
   useEffect(() => {
     const windowWidth = window.innerWidth
@@ -67,11 +67,14 @@ const ProjectsSection = (): JSX.Element => {
               sizes="100vw"
             />
             <CldImage
-              src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103658/IMG_1311.JPG_03-26-23-512_ei5det.jpg', 1024)}
+              src={getOptimizedImageUrl(
+                'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103658/IMG_1311.JPG_03-26-23-512_ei5det.jpg',
+                1024,
+              )}
               ref={ref}
               width={1440}
               height={960}
-              className="absolute object-cover h-full w-auto scale-125 top-[-20%] sm:top-[-50%] sm:block sm:h-auto sm:w-full sm:scale-120"
+              className="sm:scale-120 absolute top-[-20%] h-full w-auto scale-125 object-cover sm:-top-1/2 sm:block sm:h-auto sm:w-full"
               alt="projects background image"
               loading="lazy"
               sizes="(max-width: 639px) 100vw, (max-width: 1023px) 1024px, 1440px"

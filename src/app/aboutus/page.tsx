@@ -1,20 +1,14 @@
-import AU from './AU/AU'
 import type { Metadata } from 'next'
+import AU from './AU/AU'
 
 export const metadata: Metadata = {
-    title: 'AboutUs | KickBackStyles',
-    description: 'KickBackStylesは、「みんなに愛を届けよう」をコンセプトに生まれたアパレルブランドです。ファッションを通じて、心温まるつながりを広げていきます。',
+  title: 'AboutUs | KickBackStyles',
+  description:
+    'KickBackStylesは、「みんなに愛を届けよう」をコンセプトに生まれたアパレルブランドです。ファッションを通じて、心温まるつながりを広げていきます。',
 }
 
-
 const AboutUs = (): JSX.Element => {
-    return (
-
-
-        <AU />
-
-
-    )
+  return <AU />
 }
 
 export default AboutUs

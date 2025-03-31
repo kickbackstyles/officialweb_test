@@ -3,15 +3,14 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { CldImage } from 'next-cloudinary'
 import { useEffect, useRef } from 'react'
-import Button from '../../button/Button/Button'
 import { getOptimizedImageUrl } from '../../Hooks/getOptimizedUrl'
+import Button from '../../button/Button/Button'
 
 // ScrollTriggerの初期化
 gsap.registerPlugin(ScrollTrigger)
 
 const AboutSection = (): JSX.Element => {
   const ref = useRef(null)
-
 
   useEffect(() => {
     const windowWidth = window.innerWidth
@@ -58,11 +57,14 @@ const AboutSection = (): JSX.Element => {
               sizes="100vw"
             />
             <CldImage
-              src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743104649/IMG_1255_sshe9q.jpg', 1024)}
+              src={getOptimizedImageUrl(
+                'https://res.cloudinary.com/dvahtyhva/image/upload/v1743104649/IMG_1255_sshe9q.jpg',
+                1024,
+              )}
               ref={ref}
               width={1440}
               height={960}
-              className="absolute object-cover top-[-28%] right-0 h-full w-auto scale-125 sm:left-auto sm:top-[-30%] sm:block sm:h-auto sm:w-full sm:scale-110"
+              className="absolute right-0 top-[-28%] h-full w-auto scale-125 object-cover sm:left-auto sm:top-[-30%] sm:block sm:h-auto sm:w-full sm:scale-110"
               alt="aboutus image"
               loading="lazy"
               sizes="(max-width: 639px) 100vw, (max-width: 1023px) 1024px, 1440px"
@@ -72,7 +74,10 @@ const AboutSection = (): JSX.Element => {
         </div>
         <div className="absolute z-10 flex flex-col gap-md">
           <CldImage
-            src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103642/IMG_2467_nivvkc.png', 1024)}
+            src={getOptimizedImageUrl(
+              'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103642/IMG_2467_nivvkc.png',
+              1024,
+            )}
             width={1024}
             height={500}
             alt="with all my love"
