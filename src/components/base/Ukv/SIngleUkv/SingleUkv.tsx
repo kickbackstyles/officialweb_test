@@ -45,13 +45,13 @@ interface Item {
 
 interface SingleUkvProps {
   title?: string
-  imgPosition?: string
+
   english?: string
   japanese?: string
   itemData: Item | Item[] | undefined
 }
 
-const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
+const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
   // itemDataが配列の場合は最初の要素を取り出す
   const item = Array.isArray(itemData) ? itemData[0] : itemData
   // itemから色情報にアクセス
@@ -81,16 +81,27 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData, imgPosition }) => {
       <div className="absolute left-0 top-0 z-0 hidden h-[17.01vw] w-full border-b-1 border-black sm:block"></div>
       <div className=" sm:flex sm:items-end">
         <div className="relative hidden h-[144vw] w-full sm:z-10 sm:flex sm:h-[48vw] sm:w-5xl sm:items-center sm:justify-center sm:overflow-hidden">
-          <CldImage
-            src={`${getOptimizedImageUrl(selectedImages[0].url, 1440)}`}
-            width={1440}
-            height={1440}
-            alt="key visual"
-            className={`sm:absolute sm:h-auto sm:w-full ${imgPosition} `}
-            style={{ objectFit: 'cover' }}
-            priority
-            sizes="(max-width: 767px) 100vw, 1440px"
-          />
+          <picture>
+            <source
+              media="(min-width: 768px)"
+              srcSet={`${getOptimizedImageUrl(selectedImages[0].url, 1024)}`}
+              width="1024"
+              height="1024"
+            />
+            <source
+              media="(max-width: 767px)"
+              srcSet={`${getOptimizedImageUrl(selectedImages[0].url, 767)}`}
+              width="767"
+              height="767"
+            />
+            <CldImage
+              src={`${getOptimizedImageUrl(selectedImages[0].url, 1024)}`}
+              width={1024}
+              height={1024}
+              alt="key visual"
+              className='sm:absolute sm:h-auto sm:w-full sm:left-0 sm:top-[-20%]'
+            />
+          </picture>
         </div>
 
         {/* sp slider  */}

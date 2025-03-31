@@ -3,8 +3,34 @@ import { notFound } from 'next/navigation'
 import Footer from '../../../components/base/Footer/Footer'
 import Header from '../../../components/base/Header/Header'
 import SingleUkv from '../../../components/base/Ukv/SIngleUkv/SingleUkv'
-
+import type { Metadata } from 'next'
 const prisma = new PrismaClient()
+
+export const generateMetadata = async ({ params }: { params: { id: string } }): Promise<Metadata> => {
+  // ブログの詳細データを取得する関数
+  const itemData = await prisma.item.findUnique({
+    where: { id: Number(params.id) },
+    include: {
+      colors: {
+        include: {
+          images: true, // colorsの中のimagesを取得
+        },
+      },
+      sizes: true, // sizesも取得
+      tags: {
+        // TagsOnItemsを通じてtagsを取得
+        include: {
+          tag: true,
+        },
+      },
+    },
+  })
+
+  return {
+    title: itemData?.title,
+    description: itemData?.context
+  };
+}
 
 interface Image {
   id: number
