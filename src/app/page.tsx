@@ -18,20 +18,20 @@ export default function Home(): JSX.Element {
         <div className="relative h-[168vw] w-full sm:h-5xl">
           <picture>
             <source
-              media="(min-width: 1024px)"
+              media="(min-width: 640px)"
               srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743244000/IMG_1330_wx8wld_c_fill_w_2000_h_1400_e_improve_e_sharpen_cnycht.jpg', 2048)} 2048w,
                 ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743244000/IMG_1330_wx8wld_c_fill_w_2000_h_1400_e_improve_e_sharpen_cnycht.jpg', 1440)} 1440w`}
               sizes="2048px"
             />
             <source
               media="(max-width: 639px)"
-              srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743244004/IMG_1330_SP_lrvvxn_c_fill_h_2250_w5jnwj.jpg', 1024)} 1024w,
-                ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743244004/IMG_1330_SP_lrvvxn_c_fill_h_2250_w5jnwj.jpg', 768)} 768w`}
-              sizes="1024px"
+              srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743244004/IMG_1330_SP_lrvvxn_c_fill_h_2250_w5jnwj.jpg', 767)} 767w,
+                ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743244004/IMG_1330_SP_lrvvxn_c_fill_h_2250_w5jnwj.jpg', 480)} 480w`}
+              sizes="767px"
             />
             <CldImage
               src={getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743244000/IMG_1330_wx8wld_c_fill_w_2000_h_1400_e_improve_e_sharpen_cnycht.jpg', 1024)}
-              sizes="(max-width: 639px) 100vw, (max-width: 1023px) 1024px, 1440px"
+              sizes="(max-width: 639px) 767px, (max-width: 1023px) 1024px, 1440px"
               fill
               className="w-auto h-full sm:w-full sm:h-auto top-0 left-0 object-cover brightness-[0.8]"
               alt="key visual"

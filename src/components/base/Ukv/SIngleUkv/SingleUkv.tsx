@@ -84,20 +84,19 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
           <picture>
             <source
               media="(min-width: 768px)"
-              srcSet={`${getOptimizedImageUrl(selectedImages[0].url, 1024)}`}
-              width="1024"
-              height="1024"
+              srcSet={`${getOptimizedImageUrl(selectedImages[0].url, 1024)} 1024w,
+                ${getOptimizedImageUrl(selectedImages[0].url, 768)} 768w`}
+              sizes="(max-width: 767px) 767px, 1024px"
             />
             <source
               media="(max-width: 767px)"
-              srcSet={`${getOptimizedImageUrl(selectedImages[0].url, 767)}`}
-              width="767"
-              height="767"
+              srcSet={`${getOptimizedImageUrl(selectedImages[0].url, 767)} 767w,
+                ${getOptimizedImageUrl(selectedImages[0].url, 480)} 480w`}
+              sizes="(max-width: 767px) 767px, 1024px"
             />
             <CldImage
               src={`${getOptimizedImageUrl(selectedImages[0].url, 1024)}`}
-              width={1024}
-              height={1024}
+              sizes="(max-width: 767px) 767px, 1024px"
               alt="key visual"
               className='sm:absolute sm:h-auto sm:w-full sm:left-0 sm:top-[-20%]'
             />
