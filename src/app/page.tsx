@@ -19,15 +19,11 @@ export default function Home(): JSX.Element {
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
         <meta property="og:title" content="KickBackStyles Official Website" />
         <meta property="og:description" content="KickBackStylesのオフィシャルサイトです。" />
-        <meta property="og:image" content="${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743244000/IMG_1330_wx8wld_c_fill_w_2000_h_1400_e_improve_e_sharpen_cnycht.jpg', 2048)} 2048w,
-                ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743244000/IMG_1330_wx8wld_c_fill_w_2000_h_1400_e_improve_e_sharpen_cnycht.jpg', 1440)} 1440w`" />
-        <meta property="og:url" content="https://kickbackstyles.vercel.com" />
-        <meta name="twitter:card" content="${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743244000/IMG_1330_wx8wld_c_fill_w_2000_h_1400_e_improve_e_sharpen_cnycht.jpg', 2048)} 2048w,
-                ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743244000/IMG_1330_wx8wld_c_fill_w_2000_h_1400_e_improve_e_sharpen_cnycht.jpg', 1440)} 1440w`" />
+        <meta property="og:image" content="/kbs_logo.png" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name='twitter:title' content='KickBackStyles Official Website' />
         <meta name='twitter:description' content='KickBackStylesのオフィシャルサイトです。' />
-        <meta name='twitter:image' content="${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743244000/IMG_1330_wx8wld_c_fill_w_2000_h_1400_e_improve_e_sharpen_cnycht.jpg', 2048)} 2048w,
-                ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743244000/IMG_1330_wx8wld_c_fill_w_2000_h_1400_e_improve_e_sharpen_cnycht.jpg', 1440)} 1440w`" />
+        <meta name='twitter:image' content="/kbs_logo.png" />
       </Head>
       <div>
         <Header />
