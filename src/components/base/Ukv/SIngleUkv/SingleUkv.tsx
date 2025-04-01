@@ -168,7 +168,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
                 <span className="font-normal">（税込）</span>
               </p>
             </div>
-            <Button href="/" text="Shop" color="black" size="sm" />
+            <Button href="https://kickbackstyles-official.myshopify.com/" text="Shop" color="black" size="sm" />
           </div>
           <div className="mx-md mb-xl sm:hidden">
             <p className="mb-xs">
@@ -252,7 +252,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
                 <span className="font-normal">（税込）</span>
               </p>
             </div>
-            <Button href="/" text="Shop" color="black" sizePc="sm" />
+            <Button href="https://kickbackstyles-official.myshopify.com/" text="Shop" color="black" sizePc="sm" />
 
             <div className="mx-md mb-xl sm:absolute sm:mb-sm sm:ml-0 sm:mr-lg sm:mt-md sm:w-full sm:flex-1">
               <p className="mb-xs sm:mb-xxxs ">

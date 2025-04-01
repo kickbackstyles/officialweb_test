@@ -60,17 +60,19 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
             />
           </Link>
           <div className="relative size-[8vw] sm:hidden">
-            <CldImage
-              src={getOptimizedImageUrl(
-                'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103637/shopping-bag-svgrepo-com_mqgl0y.svg',
-                100,
-              )}
-              fill
-              className="object-cover"
-              alt="shopping bag"
-              priority
-              sizes="8vw"
-            />
+            <Link href="https://kickbackstyles-official.myshopify.com/" className='block'>
+              <CldImage
+                src={getOptimizedImageUrl(
+                  'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103637/shopping-bag-svgrepo-com_mqgl0y.svg',
+                  100,
+                )}
+                fill
+                className="object-cover"
+                alt="shopping bag"
+                priority
+                sizes="8vw"
+              />
+            </Link>
           </div>
           <ul className="hidden flex-col items-end gap-xxxs sm:fixed sm:right-md sm:top-md sm:flex">
             <li className="group relative flex items-center">
@@ -112,7 +114,7 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
             <div className="w-full">
               <Button
                 color={color}
-                href="/"
+                href="https://kickbackstyles-official.myshopify.com/"
                 text="Shop"
                 size=""
                 sizePc="sm-pc"

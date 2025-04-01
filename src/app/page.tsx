@@ -311,7 +311,7 @@ export default function Home(): JSX.Element {
                     />
                     <CldImage
                       src={getOptimizedImageUrl(
-                        'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103650/IMG_1333_SP_hgtgi1.jpg',
+                        'https://res.cloudinary.com/dvahtyhva/image/upload/v1743519065/IMG_3226_sojxx9.png',
                         400,
                       )}
                       width={800}
