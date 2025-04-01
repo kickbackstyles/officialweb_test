@@ -158,7 +158,24 @@ export default function Home(): JSX.Element {
                   <p className="text-sm leading-md sm:text-sm-pc sm:group-hover:text-white">
                     BackTextLongSleeve
                   </p>
-                  <p className="sm:group-hover:text-white">¥7,400</p>
+                  <div className="flex gap-xxs sm:gap-xxxs">
+                    <p
+                      className="flex items-center border-1 border-black px-xxs text-xs text-black sm:px-xxxs sm:text-xs-pc sm:group-hover:border-white sm:group-hover:text-white"
+                    >
+                      40%off
+                    </p>
+
+                    <div>
+                      <p
+                        className='realPrice text-xs text-gray line-through sm:text-xs-pc sm:group-hover:text-white'
+                      >
+                        ¥7,790
+                      </p>
+
+                      <p className="leading-[120%]  sm:group-hover:text-white">¥4,670</p>
+
+                    </div>
+                  </div>
                 </div>
               </Link>
             </li>
@@ -226,7 +243,24 @@ export default function Home(): JSX.Element {
                   <p className="text-sm leading-md sm:text-sm-pc sm:group-hover:text-white">
                     BackTextLongSleeve
                   </p>
-                  <p className="sm:group-hover:text-white">¥7,400</p>
+                  <div className="flex gap-xxs sm:gap-xxxs">
+                    <p
+                      className="flex items-center border-1 border-black px-xxs text-xs text-black sm:px-xxxs sm:text-xs-pc sm:group-hover:border-white sm:group-hover:text-white"
+                    >
+                      40%off
+                    </p>
+
+                    <div>
+                      <p
+                        className='realPrice text-xs text-gray line-through sm:text-xs-pc sm:group-hover:text-white'
+                      >
+                        ¥7,790
+                      </p>
+
+                      <p className="leading-[120%]  sm:group-hover:text-white">¥4,670</p>
+
+                    </div>
+                  </div>
                 </div>
               </Link>
             </li>
@@ -294,7 +328,24 @@ export default function Home(): JSX.Element {
                   <p className="text-sm leading-md sm:text-sm-pc sm:group-hover:text-white">
                     BackTextLongSleeve
                   </p>
-                  <p className="sm:group-hover:text-white">¥7,400</p>
+                  <div className="flex gap-xxs sm:gap-xxxs">
+                    <p
+                      className="flex items-center border-1 border-black px-xxs text-xs text-black sm:px-xxxs sm:text-xs-pc sm:group-hover:border-white sm:group-hover:text-white"
+                    >
+                      40%off
+                    </p>
+
+                    <div>
+                      <p
+                        className='realPrice text-xs text-gray line-through sm:text-xs-pc sm:group-hover:text-white'
+                      >
+                        ¥7,790
+                      </p>
+
+                      <p className="leading-[120%]  sm:group-hover:text-white">¥4,670</p>
+
+                    </div>
+                  </div>
                 </div>
               </Link>
             </li>
