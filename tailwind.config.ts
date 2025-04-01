@@ -87,6 +87,7 @@ const config: Config = {
       sm: '3.07vw',
       md: '3.846vw',
       lg: '5.64vw',
+      'xs-pc': '0.65vw',
       'sm-pc': '0.83vw',
       'md-pc': '1.25vw',
     },

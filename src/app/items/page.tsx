@@ -158,7 +158,25 @@ const Items = async ({
                   <p className="text-sm leading-md text-black sm:text-sm-pc">
                     {item.title}
                   </p>
-                  <p>¥{item.price}</p>
+
+                  <div className="flex gap-xxs sm:gap-xxxs">
+                    <p
+                      className={`${item.discountPrice ? 'block' : 'hidden'} flex items-center border-1 border-black px-xxs text-xs text-black sm:px-xxxs sm:text-xs-pc`}
+                    >
+                      40%off
+                    </p>
+
+                    <div>
+                      <p
+                        className={`realPrice ${item.discountPrice ? 'text-xs text-gray line-through sm:text-xs-pc ' : ''}`}
+                      >
+                        ¥{item.price}
+                      </p>
+                      {item.discountPrice && (
+                        <p className="leading-[120%]">¥{item.discountPrice}</p>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </Link>
             </li>

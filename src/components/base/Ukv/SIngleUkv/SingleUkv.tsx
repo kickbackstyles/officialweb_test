@@ -41,11 +41,11 @@ interface Item {
   colors?: ItemColor[]
   sizes: Size[]
   tags: Tag[]
+  discountPrice?: number
 }
 
 interface SingleUkvProps {
   title?: string
-
   english?: string
   japanese?: string
   itemData: Item | Item[] | undefined
@@ -82,19 +82,22 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
           <picture>
             <source
               media="(min-width: 768px)"
-              srcSet={`${getOptimizedImageUrl(selectedImages[0].url, 1024)} 1024w,
-                ${getOptimizedImageUrl(selectedImages[0].url, 768)} 768w`}
+              srcSet={`${getOptimizedImageUrl(selectedImages[0]?.url, 1024)} 1024w,
+                ${getOptimizedImageUrl(selectedImages[0]?.url, 768)} 768w`}
               sizes="(max-width: 767px) 767px, 1024px"
             />
             <source
               media="(max-width: 767px)"
-              srcSet={`${getOptimizedImageUrl(selectedImages[0].url, 767)} 767w,
-                ${getOptimizedImageUrl(selectedImages[0].url, 480)} 480w`}
+              srcSet={`${getOptimizedImageUrl(selectedImages[0]?.url, 767)} 767w,
+                ${getOptimizedImageUrl(selectedImages[0]?.url, 480)} 480w`}
               sizes="(max-width: 767px) 767px, 1024px"
             />
             <CldImage
-              src={`${getOptimizedImageUrl(selectedImages[0].url, 1024)}`}
+              src={`${getOptimizedImageUrl(selectedImages[0]?.url, 1024)} 1024w,
+                ${getOptimizedImageUrl(selectedImages[0]?.url, 768)} 768w`}
               sizes="(max-width: 767px) 767px, 1024px"
+              width={1024}
+              height={1024}
               alt="key visual"
               className="sm:absolute sm:left-0 sm:top-[-20%] sm:h-auto sm:w-full"
             />
@@ -118,11 +121,11 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
                   <SplideSlide key={index}>
                     {/* 画像は縦より横の方が大きく切る */}
                     <CldImage
-                      src={`${getOptimizedImageUrl(image.url, 800)}`}
+                      src={`${getOptimizedImageUrl(image?.url, 800)}`}
                       width={800}
                       height={800}
                       className="h-full object-cover"
-                      alt={image.alt}
+                      alt={image?.alt}
                       loading="lazy"
                       sizes="(max-width: 767px) 100vw, 800px"
                     />
@@ -134,10 +137,37 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
           <div className="mb-xl ml-md mr-lg mt-md">
             <h2 className="mb-md text-md font-bold">{item?.title}</h2>
             <p className="mb-sm">{item?.context}</p>
-            <p className="mb-lg font-bold">
-              ¥{item?.price}
-              <span className="font-normal">（税込）</span>
-            </p>
+            <div className="mb-lg flex gap-xs">
+              <p
+                className={`${item?.discountPrice ? 'block' : 'hidden'} flex items-center border-1 border-black px-xxs text-xs text-black sm:px-xxxs sm:text-xs-pc`}
+              >
+                40%off
+              </p>
+              <div className={`${item?.discountPrice ? 'block' : 'hidden'}`}>
+                <p
+                  className={`realPrice ${item?.discountPrice ? 'text-xs text-gray line-through sm:text-xs-pc ' : ''}`}
+                >
+                  ¥{item?.price}
+                  <span
+                    className={`font-normal ${item?.discountPrice ? 'hidden' : 'block'}`}
+                  >
+                    （税込）
+                  </span>
+                </p>
+                {item?.discountPrice && (
+                  <p className="font-bold leading-[120%]">
+                    ¥{item?.discountPrice}
+                    <span className="font-normal">（税込）</span>
+                  </p>
+                )}
+              </div>
+              <p
+                className={`${item?.discountPrice ? 'hidden' : 'block'} mb-lg font-bold leading-[120%]`}
+              >
+                ¥{item?.price}
+                <span className="font-normal">（税込）</span>
+              </p>
+            </div>
             <Button href="/" text="Shop" color="black" size="sm" />
           </div>
           <div className="mx-md mb-xl sm:hidden">
@@ -186,10 +216,42 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
 
           <div className="relative block">
             <p className="sm:mb-xxxxs">{item?.context}</p>
-            <p className="sm:mb-md sm:font-bold">
+
+            {/* discountPrice false */}
+            <p
+              className={`${item?.discountPrice ? 'hidden' : 'block'} sm:mb-md sm:font-bold`}
+            >
               ¥{item?.price}
               <span className="sm:font-normal">（税込）</span>
             </p>
+            {/* discountPrice true */}
+            <div
+              className={`${item?.discountPrice ? 'flex' : 'hidden'} sm:mb-md sm:gap-xxs`}
+            >
+              <p
+                className={` flex items-center border-1 border-black px-xxs text-xs text-black sm:px-xxxs sm:text-xs-pc`}
+              >
+                40%off
+              </p>
+              <div className="">
+                <p className="realPrice text-xs text-gray line-through sm:text-xs-pc">
+                  ¥{item?.price}
+                </p>
+
+                {item?.discountPrice && (
+                  <p className="font-bold leading-[120%]">
+                    ¥{item?.discountPrice}
+                    <span className="font-normal">（税込）</span>
+                  </p>
+                )}
+              </div>
+              <p
+                className={`${item?.discountPrice ? 'hidden' : 'block'} mb-lg font-bold leading-[120%]`}
+              >
+                ¥{item?.price}
+                <span className="font-normal">（税込）</span>
+              </p>
+            </div>
             <Button href="/" text="Shop" color="black" sizePc="sm" />
 
             <div className="mx-md mb-xl sm:absolute sm:mb-sm sm:ml-0 sm:mr-lg sm:mt-md sm:w-full sm:flex-1">

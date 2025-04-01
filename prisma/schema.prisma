@@ -24,6 +24,7 @@ model Item {
   colors Color[]
   sizes Size[]
   price String
+  discountPrice String?
   tags TagsOnItems[]
 }
 
