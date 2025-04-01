@@ -74,6 +74,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
   )
   const selectedImages = selectedColor ? selectedColor?.images : []
 
+
   return (
     <div>
       <div className="absolute left-0 top-0 z-0 hidden h-[17.01vw] w-full border-b-1 border-black sm:block"></div>
@@ -115,6 +116,8 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
                 options={{
                   pagination: true,
                   arrows: false,
+                  rewind: false,
+                  updateOnMove: true,
                 }}
               >
                 {color.images.map((image, index) => (
