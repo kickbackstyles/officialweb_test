@@ -37,7 +37,7 @@ export default function RootLayout({
         className={`${hackNard.className} overflow-x-hidden text-sm text-black sm:text-sm-pc`}
       >
         <NextTopLoader
-          color="#2299DD"
+          color="#00a6f4"
           initialPosition={0.08}
           crawlSpeed={200}
           height={3}
