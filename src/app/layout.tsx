@@ -2,7 +2,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
 import localfont from 'next/font/local'
 import { Providers } from '../../providers'
-import GoogleAnalytics from '../components/GoogleAnalytics/GoogleAnalytics'
+import { GoogleAnalytics } from "@next/third-parties/google";
 import NextTopLoader from 'nextjs-toploader';
 import './globals.css'
 
@@ -31,6 +31,7 @@ const hackNard = localfont({
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>): JSX.Element {
+  const gaId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
   return (
     <html lang="ja" className="">
       <body
@@ -45,7 +46,7 @@ export default function RootLayout({
           showSpinner={false}
           shadow="none"
         />
-        <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_ID} />
+        {gaId && <GoogleAnalytics gaId={gaId} />}
         <SpeedInsights />
         <Providers>{children}</Providers>
       </body>
