@@ -32,7 +32,14 @@ export const generateMetadata = async ({
 
   return {
     title: itemData?.title,
-    description: itemData?.context,
+    description: itemData?.context || '',
+    openGraph: {
+      title: itemData?.title,
+      description: itemData?.context || '',
+      images: [
+        { url: itemData?.thumbnailImage || '', width: 1200, height: 630 }
+      ],
+    },
   }
 }
 
