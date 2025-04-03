@@ -10,6 +10,17 @@ export const metadata: Metadata = {
   title: 'オフィシャルサイト | KickBackStyles',
   description:
     'KickBackStyles公式サイト | 4/1 21:00〜 初アイテム発売！ WAMLロングスリーブTシャツが登場。今ならShopify10名様限定40%オフセール実施中🔥 限定セールをお見逃しなく！',
+  icons: {
+    icon: '/favi.ico',
+  },
+  openGraph: {
+    title: 'オフィシャルサイト | KickBackStyles',
+    description:
+      'KickBackStyles公式サイト | 4/1 21:00〜 初アイテム発売！ WAMLロングスリーブTシャツが登場。今ならShopify10名様限定40%オフセール実施中🔥 限定セールをお見逃しなく！',
+    images: [
+      { url: '/ogp/thumbnail.png', width: 1200, height: 630 },
+    ],
+  },
 }
 
 const hackNard = localfont({
