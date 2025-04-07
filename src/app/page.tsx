@@ -30,7 +30,7 @@ export default function Home(): JSX.Element {
               src={getOptimizedImageUrl(
                 'https://res.cloudinary.com/dvahtyhva/image/upload/v1743244000/IMG_1330_wx8wld_c_fill_w_2000_h_1400_e_improve_e_sharpen_cnycht.jpg',
                 1024,
-              ) || ''}
+              )}
               sizes="(max-width: 639px) 767px, (max-width: 1023px) 1024px, 1440px"
               fill
               className="left-0 top-0 h-full w-auto object-cover brightness-[0.8] sm:h-auto sm:w-full"
@@ -81,7 +81,7 @@ export default function Home(): JSX.Element {
                 src={getOptimizedImageUrl(
                   'https://res.cloudinary.com/dvahtyhva/image/upload/v1743106008/IMG_1344_rhkg3e.jpg',
                   500,
-                ) || ''}
+                )}
                 fill
                 style={{ objectFit: 'cover' }}
                 alt="Section items visual"
@@ -116,7 +116,7 @@ export default function Home(): JSX.Element {
                     src={getOptimizedImageUrl(
                       'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103641/IMG_3220_vulr2q.png',
                       400,
-                    ) || ''}
+                    )}
                     width={800}
                     height={800}
                     sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
@@ -143,7 +143,7 @@ export default function Home(): JSX.Element {
                       src={getOptimizedImageUrl(
                         'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103655/IMG_1248_SP.JPG_03-26-23-263_imuuob.jpg',
                         400,
-                      ) || ''}
+                      )}
                       width={800}
                       height={800}
                       sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
@@ -201,7 +201,7 @@ export default function Home(): JSX.Element {
                     src={getOptimizedImageUrl(
                       'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3224_x04516.png',
                       400,
-                    ) || ''}
+                    )}
                     width={800}
                     height={800}
                     sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
@@ -228,7 +228,7 @@ export default function Home(): JSX.Element {
                       src={getOptimizedImageUrl(
                         'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103652/IMG_1317_SP.JPG_03-26-23-559_wgw0u1.jpg',
                         400,
-                      ) || ''}
+                      )}
                       width={800}
                       height={800}
                       sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
@@ -286,7 +286,7 @@ export default function Home(): JSX.Element {
                     src={getOptimizedImageUrl(
                       'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103643/IMG_3225_nr1xu5.png',
                       400,
-                    ) || ''}
+                    )}
                     width={800}
                     height={800}
                     sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
@@ -313,7 +313,7 @@ export default function Home(): JSX.Element {
                       src={getOptimizedImageUrl(
                         'https://res.cloudinary.com/dvahtyhva/image/upload/v1743415133/IMG_1333_SP_hgtgi1_c_fill_w_1500_wsonfy.jpg',
                         400,
-                      ) || ''}
+                      )}
                       width={800}
                       height={800}
                       sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
