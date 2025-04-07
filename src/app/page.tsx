@@ -299,19 +299,19 @@ export default function Home(): JSX.Element {
                   <picture>
                     <source
                       media="(min-width: 1024px)"
-                      srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103650/IMG_1333_SP_hgtgi1.jpg', 800)} 800w,
-                        ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103650/IMG_1333_SP_hgtgi1.jpg', 600)} 600w`}
+                      srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743415133/IMG_1333_SP_hgtgi1_c_fill_w_1500_wsonfy.jpg', 800)} 800w,
+                        ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743415133/IMG_1333_SP_hgtgi1_c_fill_w_1500_wsonfy.jpg', 600)} 600w`}
                       sizes="800px"
                     />
                     <source
                       media="(min-width: 640px)"
-                      srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103650/IMG_1333_SP_hgtgi1.jpg', 600)} 600w,
-                        ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743103650/IMG_1333_SP_hgtgi1.jpg', 400)} 400w`}
+                      srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743415133/IMG_1333_SP_hgtgi1_c_fill_w_1500_wsonfy.jpg', 600)} 600w,
+                        ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1743415133/IMG_1333_SP_hgtgi1_c_fill_w_1500_wsonfy.jpg', 400)} 400w`}
                       sizes="600px"
                     />
                     <CldImage
                       src={getOptimizedImageUrl(
-                        'https://res.cloudinary.com/dvahtyhva/image/upload/v1743519065/IMG_3226_sojxx9.png',
+                        'https://res.cloudinary.com/dvahtyhva/image/upload/v1743415133/IMG_1333_SP_hgtgi1_c_fill_w_1500_wsonfy.jpg',
                         400,
                       )}
                       width={800}
