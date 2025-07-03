@@ -43,9 +43,9 @@ export default function Home(): JSX.Element {
             <h1 className="w-3/5 text-md leading-md text-white sm:w-full sm:text-md-pc">
               @kickbackstyles.official
               <br />
-              2025.07.01 21:00~ Releases New Item...!
+              2025.07.20 21:00~ Releases New Items...!
               <br />
-              / Logo T-Shirt / Nylon Shorts / Stripe Shirt /
+              /BackPrint T-Shirt / Nylon Shorts /
             </h1>
           </div>
         </div>
