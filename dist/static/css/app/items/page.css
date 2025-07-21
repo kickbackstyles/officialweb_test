@@ -1,0 +1,37 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/components/base/Ukv/Ukv.modules.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+.splide__pagination {
+  width: 90%;
+  position: relative;
+  margin: 0 auto;
+  top: -8.97vw;
+  flex-wrap: nowrap;
+}
+
+.splide__pagination li {
+  width: 100%;
+}
+
+.splide__pagination li button {
+  height: 2px;
+  width: 100%;
+  background-color: #cbcbcb;
+  opacity: 0.8;
+}
+
+.splide__pagination li .is-active {
+  background: #333;
+  opacity: 1;
+}
+
+.splide__list {
+  height: 140vw;
+}
+
+@media (width>=640px) {
+  .splide__list {
+    height: auto;
+  }
+}
+
