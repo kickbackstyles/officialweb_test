@@ -45,7 +45,8 @@ export default function Home(): JSX.Element {
               <br />
               2025.07.25 21:00~ Releases New Items...!
               <br />
-              /BackPrint T-Shirt / Nylon Shorts /
+              <span className='flex gap-sm sm:gap-xxs items-center mt-md sm:mt-xxs sm:mb-xxxs'><img src='/t-shirt.svg' alt='BackPrintT-Shirt' className='w-[6vw] h-[6vw] sm:w-[2vw] sm:h-[2vw]' />BackPrintT-Shirt</span>
+              <span className='flex gap-sm sm:gap-xxs items-center'><img src='/shorts.svg' alt='NylonShorts' className='w-[6vw] h-[6vw] sm:w-[2vw] sm:h-[2vw]' />NylonShorts</span>
             </h1>
           </div>
         </div>
@@ -96,10 +97,14 @@ export default function Home(): JSX.Element {
         </div>
         <div className="sm:h-5xl sm:w-1/2">
           <ul className="flex flex-nowrap overflow-x-scroll sm:h-full sm:flex-wrap sm:overflow-x-auto">
-            
-            <li className="relative flex h-[72.8vw] w-[46vw] min-w-[46vw] items-center overflow-hidden border-y-1 border-r-1 border-black bg-white sm:size-1/2 sm:min-w-0">
+            {/* 3アイテム以上 */}
+
+            {/* <li className="relative flex h-[72.8vw] w-[46vw] min-w-[46vw] items-center overflow-hidden border-y-1 border-r-1 border-black bg-white sm:size-1/2 sm:min-w-0"> */}
+
+            {/* 2アイテム */}
+            <li className="relative flex h-[72.8vw] w-1/2 min-w-[46vw] items-center overflow-hidden border-y-1 border-r-1 border-black bg-white sm:size-1/2 sm:min-w-0">
               <Link
-                href="/items"
+                href="/items/15"
                 className="group w-full h-full sm:flex  sm:items-center sm:justify-center "
               >
                 <picture>
@@ -124,7 +129,7 @@ export default function Home(): JSX.Element {
                     height={800}
                     sizes="(max-width: 639px) 100vw, (max-width: 1023px) 600px, 800px"
                     alt="KickBackStyles BackPrintT-Shirt"
-                    className="h-full w-auto sm:h-auto sm:w-full object-cover sm:group-hover:hidden"
+                    className="h-auto w-full sm:h-auto sm:w-full object-cover sm:group-hover:hidden"
                     loading="lazy"
                   />
                 </picture>
@@ -182,9 +187,13 @@ export default function Home(): JSX.Element {
                 </div>
               </Link>
             </li>
-            <li className="relative flex h-[72.8vw] w-[46vw] min-w-[46vw] items-center overflow-hidden border-y-1 border-r-1 border-black bg-white sm:size-1/2 sm:min-w-0 sm:border-l-1 sm:border-t-0">
+            {/* 3アイテム以上 */}
+            {/* <li className="relative flex h-[72.8vw] w-[46vw] min-w-[46vw] items-center overflow-hidden border-y-1 border-r-1 border-black bg-white sm:size-1/2 sm:min-w-0 sm:border-l-1 sm:border-t-0"> */}
+
+            {/* 2アイテム */}
+              <li className="relative flex h-[72.8vw] w-1/2 min-w-[46vw] items-center overflow-hidden border-y-1 border-r-1 border-black bg-white sm:size-1/2 sm:min-w-0 sm:border-l-1 sm:border-t-0"> 
               <Link
-                href="/items"
+                href="/items/16"
                 className="group size-full sm:flex sm:items-center sm:justify-center"
               >
                 <picture>
@@ -209,7 +218,7 @@ export default function Home(): JSX.Element {
                     height={800}
                     sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
                     alt="KickBackStyles NylonShorts"
-                    className="h-full w-auto object-cover sm:group-hover:hidden"
+                    className="h-auto w-full object-cover sm:group-hover:hidden"
                     loading="lazy"
                   />
                 </picture>

@@ -60,7 +60,7 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
             />
           </Link>
           <div className="relative size-[8vw] sm:hidden">
-            <Link href="https://kickbackstyles-official.myshopify.com/" className='block'>
+            <Link href="https://shop.kickbackstyles.com" className='block'>
               <CldImage
                 src={getOptimizedImageUrl(
                   'https://res.cloudinary.com/dvahtyhva/image/upload/v1743103637/shopping-bag-svgrepo-com_mqgl0y.svg',
@@ -114,7 +114,7 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
             <div className="w-full">
               <Button
                 color={color}
-                href="https://kickbackstyles-official.myshopify.com/"
+                href="https://shop.kickbackstyles.com"
                 text="Shop"
                 size=""
                 sizePc="sm-pc"

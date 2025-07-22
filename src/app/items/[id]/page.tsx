@@ -77,6 +77,7 @@ type Item = {
   colors?: ItemColor[]
   sizes: Size[]
   tags: Tag[]
+  baseUrl?: string
 }
 
 const DetailPage = async ({ params }: { params: { id: number } }) => {
@@ -95,8 +96,11 @@ const DetailPage = async ({ params }: { params: { id: number } }) => {
           tag: true,
         },
       },
+     
     },
   })
+
+
 
   if (!item) {
     notFound()

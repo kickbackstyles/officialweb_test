@@ -135,7 +135,7 @@ const Items = async ({
         <ul className="flex flex-wrap">
           {items.map((item, index) => (
             <li
-              className={`relative flex h-[72.8vw] w-1/2 items-center border-black bg-white sm:h-[44.41vw] sm:w-[calc(100%/3)] 
+              className={`overflow-hidden relative flex h-[72.8vw] w-1/2 items-center border-black bg-white sm:h-[44.41vw] sm:w-[calc(100%/3)] 
                                 ${index === 0
                   ? 'border-1'
                   : index === 1
@@ -150,7 +150,7 @@ const Items = async ({
             >
               <Link
                 href={`/items/${item.id}`}
-                className="w-full sm:flex sm:h-full sm:items-center sm:justify-center overflow-hidden"
+                className="w-full sm:flex sm:h-full sm:items-center sm:justify-center"
               >
                 <ImageComp
                   src={`${item.thumbnailImage}`}

@@ -43,6 +43,7 @@ interface Item {
   sizes: Size[]
   tags: Tag[]
   discountPrice?: number
+  baseUrl?: string
 }
 
 interface SingleUkvProps {
@@ -74,6 +75,8 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
     (color) => color?.title === selectedColorTitle,
   )
   const selectedImages = selectedColor ? selectedColor?.images : []
+
+
 
 
   return (
@@ -179,7 +182,8 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
                 <span className="font-normal">（Tax included）</span>
               </p>
             </div>
-            <Button href="https://kickbackstyles-official.myshopify.com/" text="Shop" color="black" size="sm" />
+            <Button href={item?.baseUrl || 'https://shop.kickbackstyles.com'} text="Shop" color="black" size="sm" target="_blank" />
+           
           </div>
           <div className="mx-md mb-xl sm:hidden">
             <p className="mb-xs">
@@ -270,7 +274,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
                 <span className="font-normal">（Tax included）</span>
               </p>
             </div>
-            <Button href="https://kickbackstyles-official.myshopify.com/" text="Shop" color="black" sizePc="sm" />
+            <Button href={item?.baseUrl || 'https://shop.kickbackstyles.com'} text="Shop" color="black" sizePc="sm" target="_blank" />
 
             <div className="mx-md mb-xl sm:absolute sm:mb-sm sm:ml-0 sm:mr-lg sm:mt-md sm:w-full sm:flex-1">
               <p className="mb-xs sm:mb-xxxs ">
@@ -327,7 +331,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
                   .map((image, index) => (
                   <li
                     key={index}
-                    className={`${index === 0 ? 'hidden' : ''} relative flex w-[46vw] items-center border-y-1 border-r-1 border-black bg-white sm:h-4xl sm:w-1/2 sm:overflow-hidden`}
+                    className={`${index === 0 ? 'hidden' : ''} relative flex w-[46vw] items-center border-y-1 border-r-1 border-black bg-white sm:h-4xl sm:w-1/2  sm:overflow-hidden`}
                   >
                     <CldImage
                       src={`${getOptimizedImageUrl(image.url, 500)}`}
