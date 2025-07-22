@@ -182,7 +182,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
                 <span className="font-normal">（Tax included）</span>
               </p>
             </div>
-            <Button href={item?.baseUrl || 'https://shop.kickbackstyles.com'} text="Shop" color="black" size="sm" target="_blank" />
+            <Button href={item?.baseUrl || 'https://shop.kickbackstyles.com'} text="Shop" color="black" size="sm" />
            
           </div>
           <div className="mx-md mb-xl sm:hidden">
@@ -274,7 +274,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
                 <span className="font-normal">（Tax included）</span>
               </p>
             </div>
-            <Button href={item?.baseUrl || 'https://shop.kickbackstyles.com'} text="Shop" color="black" sizePc="sm" target="_blank" />
+            <Button href={item?.baseUrl || 'https://shop.kickbackstyles.com'} text="Shop" color="black" sizePc="sm" />
 
             <div className="mx-md mb-xl sm:absolute sm:mb-sm sm:ml-0 sm:mr-lg sm:mt-md sm:w-full sm:flex-1">
               <p className="mb-xs sm:mb-xxxs ">
