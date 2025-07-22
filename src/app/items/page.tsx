@@ -150,7 +150,7 @@ const Items = async ({
             >
               <Link
                 href={`/items/${item.id}`}
-                className="w-full sm:flex sm:h-full sm:items-center sm:justify-center"
+                className="w-full sm:flex sm:h-full sm:items-center sm:justify-center overflow-hidden"
               >
                 <ImageComp
                   src={`${item.thumbnailImage}`}
@@ -158,29 +158,29 @@ const Items = async ({
                   height={400}
                   sizes="100vw"
                   alt={item.title}
-                  className="h-auto w-full scale-95 object-cover"
+                  className="h-auto w-full object-cover"
                 />
 
-                <div className="absolute bottom-xs left-sm">
-                  <p className="text-sm leading-md text-black sm:text-sm-pc">
+                <div className="absolute bottom-xs left-sm z-10">
+                  <p className="text-sm leading-md text-white sm:text-sm-pc">
                     {item.title}
                   </p>
 
                   <div className="flex gap-xxs sm:gap-xxxs">
                     <p
-                      className={`${item.discountPrice ? 'block' : 'hidden'} flex items-center border-1 border-black px-xxs text-xs text-black sm:px-xxxs sm:text-xs-pc`}
+                      className={`${item.discountPrice ? 'block' : 'hidden'} flex items-center border-1 border-black px-xxs text-xs text-white sm:px-xxxs sm:text-xs-pc`}
                     >
                       40%off
                     </p>
 
                     <div>
                       <p
-                        className={`realPrice ${item.discountPrice ? 'text-xs text-gray line-through sm:text-xs-pc ' : ''}`}
+                        className={`realPrice ${item.discountPrice ? 'text-xs text-white line-through sm:text-xs-pc ' : 'text-white'}`}
                       >
-                        ¥{item.price}
+                        {item.price} JPY
                       </p>
                       {item.discountPrice && (
-                        <p className="leading-[120%]">¥{item.discountPrice}</p>
+                        <p className="leading-[120%] text-white">{item.discountPrice} JPY</p>
                       )}
                     </div>
                   </div>

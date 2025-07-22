@@ -99,11 +99,11 @@ const Ukv: React.FC<UkvProps> = ({
                 NewArrivals
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/items?q=gifts" className="sm:hover:text-gray">
                 Gifts
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link href="/items?q=unisex" className="sm:hover:text-gray">
                 Unisex

@@ -49,6 +49,7 @@ model Image {
   alt String
   color Color? @relation(fields: [colorId], references: [id])
   colorId Int?
+  priority Int?
 }
 
 model Tag {

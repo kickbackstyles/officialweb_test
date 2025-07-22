@@ -11,6 +11,7 @@ interface Image {
   id: number
   url: string
   alt: string
+  priority?: number
 }
 
 interface ItemColor {
@@ -100,7 +101,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
               width={1024}
               height={1024}
               alt="key visual"
-              className="sm:absolute sm:left-0 sm:top-[-20%] sm:h-auto sm:w-full"
+              className="sm:absolute sm:left-0 sm:top-1/2 sm:-translate-y-1/2 sm:h-auto sm:w-full"
             />
           </picture>
         </div>
@@ -120,7 +121,9 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
                   updateOnMove: true,
                 }}
               >
-                {color.images.map((image, index) => (
+                {color.images
+                  .sort((a, b) => (a.priority || 0) - (b.priority || 0))
+                  .map((image, index) => (
                   <SplideSlide key={index}>
                     {/* 画像は縦より横の方が大きく切る */}
                     <CldImage
@@ -139,7 +142,12 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
           ))}
           <div className="mb-xl ml-md mr-lg mt-md">
             <h2 className="mb-md text-md font-bold">{item?.title}</h2>
-            <p className="mb-sm">{item?.context}</p>
+            <p className="mb-md">{item?.context?.split('<br/>').map((line, index, array) => (
+                <React.Fragment key={index}>
+                  {line}
+                  {index < array.length - 1 && <br />}
+                </React.Fragment>
+              ))}</p>
             <div className="mb-lg flex gap-xs">
               <p
                 className={`${item?.discountPrice ? 'block' : 'hidden'} flex items-center border-1 border-black px-xxs text-xs text-black sm:px-xxxs sm:text-xs-pc`}
@@ -150,25 +158,25 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
                 <p
                   className={`realPrice ${item?.discountPrice ? 'text-xs text-gray line-through sm:text-xs-pc ' : ''}`}
                 >
-                  ¥{item?.price}
+                  {item?.price} JPY
                   <span
                     className={`font-normal ${item?.discountPrice ? 'hidden' : 'block'}`}
                   >
-                    （税込）
+                    （Tax included）
                   </span>
                 </p>
                 {item?.discountPrice && (
                   <p className="font-bold leading-[120%]">
-                    ¥{item?.discountPrice}
-                    <span className="font-normal">（税込）</span>
+                    {item?.discountPrice} JPY
+                    <span className="font-normal">（Tax included）</span>
                   </p>
                 )}
               </div>
               <p
                 className={`${item?.discountPrice ? 'hidden' : 'block'} mb-lg font-bold leading-[120%]`}
               >
-                ¥{item?.price}
-                <span className="font-normal">（税込）</span>
+                {item?.price} JPY
+                <span className="font-normal">（Tax included）</span>
               </p>
             </div>
             <Button href="https://kickbackstyles-official.myshopify.com/" text="Shop" color="black" size="sm" />
@@ -195,7 +203,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
                 <li
                   key={index}
                   onClick={() => handleColorClick(color.title)}
-                  className={`size-3xl overflow-hidden sm:cursor-pointer  ${color.title === selectedColorTitle ? 'opacity-50' : 'opacity-100'}`}
+                  className={`size-3xl overflow-hidden sm:cursor-pointer flex items-center justify-center   ${color.title === selectedColorTitle ? 'opacity-50' : 'opacity-100'}`}
                   tabIndex={index}
                 >
                   <CldImage
@@ -218,14 +226,21 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
           <h2 className="sm:mb-sm sm:text-md-pc">{item?.title}</h2>
 
           <div className="relative block">
-            <p className="sm:mb-xxxxs">{item?.context}</p>
+            <p className="sm:mb-xxs">
+              {item?.context?.split('<br/>').map((line, index, array) => (
+                <React.Fragment key={index}>
+                  {line}
+                  {index < array.length - 1 && <br />}
+                </React.Fragment>
+              ))}
+            </p>
 
             {/* discountPrice false */}
             <p
               className={`${item?.discountPrice ? 'hidden' : 'block'} sm:mb-md sm:font-bold`}
             >
-              ¥{item?.price}
-              <span className="sm:font-normal">（税込）</span>
+              {item?.price} JPY
+              <span className="sm:font-normal">（Tax included）</span>
             </p>
             {/* discountPrice true */}
             <div
@@ -238,21 +253,21 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
               </p>
               <div className="">
                 <p className="realPrice text-xs text-gray line-through sm:text-xs-pc">
-                  ¥{item?.price}
+                  {item?.price} JPY
                 </p>
 
                 {item?.discountPrice && (
                   <p className="font-bold leading-[120%]">
-                    ¥{item?.discountPrice}
-                    <span className="font-normal">（税込）</span>
+                    {item?.discountPrice} JPY
+                    <span className="font-normal">（Tax included）</span>
                   </p>
                 )}
               </div>
               <p
                 className={`${item?.discountPrice ? 'hidden' : 'block'} mb-lg font-bold leading-[120%]`}
               >
-                ¥{item?.price}
-                <span className="font-normal">（税込）</span>
+                {item?.price} JPY
+                <span className="font-normal">（Tax included）</span>
               </p>
             </div>
             <Button href="https://kickbackstyles-official.myshopify.com/" text="Shop" color="black" sizePc="sm" />
@@ -279,7 +294,7 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
                   <li
                     key={index}
                     onClick={() => handleColorClick(color.title)}
-                    className={`size-3xl overflow-hidden sm:size-xl sm:cursor-pointer ${color.title === selectedColorTitle ? 'opacity-50' : 'opacity-100'}`}
+                    className={`size-3xl overflow-hidden sm:size-xl sm:cursor-pointer flex items-center justify-center ${color.title === selectedColorTitle ? 'opacity-50' : 'opacity-100'}`}
                     tabIndex={index}
                   >
                     <CldImage
@@ -307,7 +322,9 @@ const SingleUkv: React.FC<SingleUkvProps> = ({ itemData }) => {
                 key={index}
                 className={`flex flex-nowrap overflow-x-scroll sm:h-full sm:flex-wrap sm:overflow-x-auto ${color.title !== selectedColorTitle ? 'hidden' : 'block'}`}
               >
-                {color.images.map((image, index) => (
+                {color.images
+                  .sort((a, b) => (a.priority || 0) - (b.priority || 0))
+                  .map((image, index) => (
                   <li
                     key={index}
                     className={`${index === 0 ? 'hidden' : ''} relative flex w-[46vw] items-center border-y-1 border-r-1 border-black bg-white sm:h-4xl sm:w-1/2 sm:overflow-hidden`}
