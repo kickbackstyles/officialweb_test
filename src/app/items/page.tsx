@@ -11,11 +11,11 @@ import ImageComp from '../../components/image/ImageComp/ImageComp'
 export const metadata: Metadata = {
   title: 'Items | KickBackStyles',
   description:
-    'KickbackStyles初のアイテムが登場! With All My Love ロングスリーブTシャツをチェック!',
+    'KickbackStyles 夏のアイテム、BackPrint T-ShirtとNylon Shortsが登場! Check it out!',
   openGraph: {
     title: 'Items | KickBackStyles',
     description:
-      'KickbackStyles初のアイテムが登場! With All My Love ロングスリーブTシャツをチェック!',
+      'KickbackStyles 夏のアイテム、BackPrint T-ShirtとNylon Shortsが登場! Check it out!',
     images: [
       { url: '/ogp/thumbnail.png', width: 1200, height: 630 },
     ],

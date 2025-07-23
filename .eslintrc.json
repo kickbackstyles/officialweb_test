@@ -26,6 +26,8 @@
     ],
     "object-shorthand": "error",
     "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/classnames-order": "warn",
+    "tailwindcss/enforces-shorthand": "warn",
     "react/jsx-curly-brace-presence": "error",
     "react/self-closing-comp": [
       "error",

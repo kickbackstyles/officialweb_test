@@ -30,15 +30,35 @@ export const generateMetadata = async ({
     },
   })
 
+  if (!itemData) {
+    return {
+      title: 'アイテムが見つかりません',
+      description: 'お探しのアイテムは見つかりませんでした。',
+    }
+  }
+
+  const tags = itemData.tags.map(t => t.tag.title).join(', ')
+  const price = itemData.discountPrice || itemData.price
+
   return {
-    title: itemData?.title,
-    description: itemData?.context || '',
+    title: itemData.title,
+    description: `${itemData.title} - ${itemData.context || 'KickBackStylesのアイテム'}。価格: ${price}円。${tags}`,
+    keywords: ['KickBackStyles', itemData.title, 'ファッション', 'アパレル', ...itemData.tags.map(t => t.tag.title)],
     openGraph: {
-      title: itemData?.title,
-      description: itemData?.context || '',
+      title: `${itemData.title} | KickBackStyles`,
+      description: `${itemData.title} - ${itemData.context || 'KickBackStylesのアイテム'}。価格: ${price}円。`,
       images: [
-        { url: itemData?.thumbnailImage || '', width: 1200, height: 630 }
+        { 
+          url: itemData.thumbnailImage || '/ogp/thumbnail.png', 
+          width: 1200, 
+          height: 630,
+          alt: itemData.title
+        }
       ],
+      type: 'website',
+    },
+    alternates: {
+      canonical: `/items/${params.id}`,
     },
   }
 }

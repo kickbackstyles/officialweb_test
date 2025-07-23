@@ -1,10 +1,32 @@
 import { PrismaClient } from '@prisma/client'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import AboutSection from '../../components/base/AboutSection/AboutSection'
 import Footer from '../../components/base/Footer/Footer'
 import Header from '../../components/base/Header/Header'
 import Ukv from '../../components/base/Ukv/Ukv/Ukv'
 import ImageComp from '../../components/image/ImageComp/ImageComp'
+
+export const metadata: Metadata = {
+  title: 'Projects',
+  description: 'KickBackStylesは、『みんなに愛を届ける』という想いのもと、多くの方々とつながりながらポップアップやイベント、ドネーション活動に取り組んでいます。',
+  keywords: ['KickBackStyles', 'プロジェクト', 'ポップアップ', 'イベント', 'ドネーション', '愛を届ける'],
+  openGraph: {
+    title: 'Projects | KickBackStyles',
+    description: 'KickBackStylesは、『みんなに愛を届ける』という想いのもと、多くの方々とつながりながらポップアップやイベント、ドネーション活動に取り組んでいます。',
+    images: [
+      { 
+        url: '/ogp/thumbnail.png', 
+        width: 1200, 
+        height: 630,
+        alt: 'KickBackStyles Projects'
+      },
+    ],
+  },
+  alternates: {
+    canonical: '/projects',
+  },
+}
 
 const prisma = new PrismaClient()
 
@@ -58,18 +80,16 @@ const Projects = async ({
         itemsPage={false}
         title="Projects"
         imgPosition="object-[40%]"
-        english="At KickBackStyles, we are dedicated to ‘Spreading Love to Everyone’ by connecting with people through pop-ups, projects, and events. To expand these activities, we also engage in crowdfunding initiatives."
-        japanese="KickBackStylesは、『みんなに愛を届ける』という想いのもと、多くの方々とつながりながら、ポップアップやプロジェクト、イベントを開催しています。その活動を広げるために、クラウドファンディングにも取り組んでいます。"
+        english="KickBackStyles works to spread love to everyone through pop-ups, events, and donation activities, building connections with people along the way."
+        japanese="KickBackStylesは、『みんなに愛を届ける』という想いのもと、多くの方々とつながりながらポップアップやイベント、ドネーション活動に取り組んでいます。"
       />
       <div className="ml-md mr-xl mt-3xl sm:hidden">
         <h2 className="mb-xl text-md">Projects</h2>
         <p className="mb-md leading-md">
-          At KickBackStyles, we are dedicated to ‘Spreading Love to Everyone’ by
-          connecting with people through pop-ups, projects, and events. To
-          expand these activities, we also engage in crowdfunding initiatives.
+         KickBackStyles works to spread love to everyone through pop-ups, events, and donation activities, building connections with people along the way.
         </p>
         <p className="mb-xl leading-md">
-          KickBackStylesは、『みんなに愛を届ける』という想いのもと、多くの方々とつながりながら、ポップアップやプロジェクト、イベントを開催しています。その活動を広げるために、クラウドファンディングにも取り組んでいます。
+          KickBackStylesは、『みんなに愛を届ける』という想いのもと、多くの方々とつながりながらポップアップやイベント、ドネーション活動に取り組んでいます。
         </p>
       </div>
       <div>

@@ -4,22 +4,81 @@ import localfont from 'next/font/local'
 import { Providers } from '../../providers'
 import { GoogleAnalytics } from "@next/third-parties/google";
 import NextTopLoader from 'nextjs-toploader';
+import StructuredData from '../components/StructuredData'
+import ServiceWorker from '../components/ServiceWorker'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'オフィシャルサイト | KickBackStyles',
-  description:
-    'KickBackStyles公式サイト | 4/1 21:00〜 初アイテム発売！ WAMLロングスリーブTシャツが登場。今ならShopify10名様限定40%オフセール実施中🔥 限定セールをお見逃しなく！',
-  icons: {
-    icon: '/favi.ico',
+  title: {
+    default: 'オフィシャルサイト | KickBackStyles',
+    template: '%s | KickBackStyles'
   },
+  description:
+    'KickBackStyles公式サイト | 7月25日 21:00〜 Release New Items...! 新たな夏のアイテム、バックプリントTシャツとナイロンショーツが登場! Check it out!',
+  keywords: ['KickBackStyles', 'ファッション', 'Tシャツ', 'ナイロンショーツ', 'バックプリントTシャツ'],
+  authors: [{ name: 'KickBackStyles' }],
+  creator: 'KickBackStyles',
+  publisher: 'KickBackStyles',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://kickbackstyles.com'), // 実際のドメインに変更してください
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
+    type: 'website',
+    locale: 'ja_JP',
+    url: 'https://kickbackstyles.com', // 実際のドメインに変更してください
     title: 'オフィシャルサイト | KickBackStyles',
     description:
-      'KickBackStyles公式サイト | 4/1 21:00〜 初アイテム発売！ WAMLロングスリーブTシャツが登場。今ならShopify10名様限定40%オフセール実施中🔥 限定セールをお見逃しなく！',
+      'KickBackStyles公式サイト | 7月25日 21:00〜 Release New Items...! 新たな夏のアイテム、バックプリントTシャツとナイロンショーツが登場! Check it out!',
+    siteName: 'KickBackStyles',
     images: [
-      { url: '/ogp/thumbnail.png', width: 1200, height: 630 },
+      { 
+        url: '/ogp/thumbnail.png', 
+        width: 1200, 
+        height: 630,
+        alt: 'KickBackStyles - オフィシャルサイト'
+      },
     ],
+  },
+  
+  verification: {
+    google: 'your-google-verification-code', // Google Search Consoleの検証コード
+    yandex: 'your-yandex-verification-code',
+    yahoo: 'your-yahoo-verification-code',
+  },
+  other: {
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'default',
+    'apple-mobile-web-app-title': 'KickBackStyles',
+    'mobile-web-app-capable': 'yes',
+    'msapplication-TileColor': '#00a6f4',
+    'msapplication-config': '/browserconfig.xml',
   },
 }
 
@@ -59,6 +118,8 @@ export default function RootLayout({
         />
         {gaId && <GoogleAnalytics gaId={gaId} />}
         <SpeedInsights />
+        <StructuredData />
+        <ServiceWorker />
         <Providers>{children}</Providers>
       </body>
     </html>

@@ -43,7 +43,7 @@ export default function Home(): JSX.Element {
             <h1 className="w-3/5 text-md leading-md text-white sm:w-full sm:text-md-pc">
               @kickbackstyles.official
               <br />
-              2025.07.25 21:00~ Releases New Items...!
+              2025.07.25 21:00~ Release New Items...!
               <br />
               <span className='flex gap-sm sm:gap-xxs items-center mt-md sm:mt-xxs sm:mb-xxxs'><img src='/t-shirt.svg' alt='BackPrintT-Shirt' className='w-[6vw] h-[6vw] sm:w-[2vw] sm:h-[2vw]' />BackPrintT-Shirt</span>
               <span className='flex gap-sm sm:gap-xxs items-center'><img src='/shorts.svg' alt='NylonShorts' className='w-[6vw] h-[6vw] sm:w-[2vw] sm:h-[2vw]' />NylonShorts</span>

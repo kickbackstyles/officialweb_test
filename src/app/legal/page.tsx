@@ -1,5 +1,27 @@
+import type { Metadata } from 'next'
 import Footer from '../../components/base/Footer/Footer'
 import Header from '../../components/base/Header/Header'
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | KickBackStyles',
+  description: 'KickBackStylesのプライバシーポリシーです。お客様の個人情報の取り扱いについて詳しく説明しています。',
+  keywords: ['KickBackStyles', 'プライバシーポリシー', '個人情報保護', '利用規約'],
+  openGraph: {
+    title: 'Privacy Policy | KickBackStyles',
+    description: 'KickBackStylesのプライバシーポリシーです。お客様の個人情報の取り扱いについて詳しく説明しています。',
+    images: [
+      { 
+        url: '/ogp/thumbnail.png', 
+        width: 1200, 
+        height: 630,
+        alt: 'KickBackStyles Privacy Policy'
+      },
+    ],
+  },
+  alternates: {
+    canonical: '/legal',
+  },
+}
 
 const Legal = (): JSX.Element => {
   return (
