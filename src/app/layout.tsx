@@ -3,9 +3,10 @@ import type { Metadata } from 'next'
 import localfont from 'next/font/local'
 import { Providers } from '../../providers'
 import { GoogleAnalytics } from "@next/third-parties/google";
-import NextTopLoader from 'nextjs-toploader';
 import StructuredData from '../components/StructuredData'
 import ServiceWorker from '../components/ServiceWorker'
+import RouterTransitionProvider from '../components/Loading/RouterTransitionProvider'
+import AutoTransitionIndicator from '../components/Loading/AutoTransitionIndicator'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -107,20 +108,14 @@ export default function RootLayout({
       <body
         className={`${hackNard.className} overflow-x-hidden text-sm text-black sm:text-sm-pc`}
       >
-        <NextTopLoader
-          color="#00a6f4"
-          initialPosition={0.08}
-          crawlSpeed={200}
-          height={3}
-          crawl={true}
-          showSpinner={false}
-          shadow="none"
-        />
         {gaId && <GoogleAnalytics gaId={gaId} />}
         <SpeedInsights />
         <StructuredData />
         <ServiceWorker />
-        <Providers>{children}</Providers>
+        <RouterTransitionProvider>
+          <Providers>{children}</Providers>
+          <AutoTransitionIndicator />
+        </RouterTransitionProvider>
       </body>
     </html>
   )

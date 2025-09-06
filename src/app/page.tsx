@@ -1,4 +1,5 @@
 'use client'
+
 import { CldImage } from 'next-cloudinary'
 import Link from 'next/link'
 import { getOptimizedImageUrl } from '../components/Hooks/getOptimizedUrl'
@@ -6,8 +7,10 @@ import AboutSection from '../components/base/AboutSection/AboutSection'
 import Footer from '../components/base/Footer/Footer'
 import Header from '../components/base/Header/Header'
 import ProjectsSection from '../components/base/ProjectsSection/ProjectsSection'
+import ItemCard from '../components/ItemCard'
 
 export default function Home(): JSX.Element {
+
   return (
     <div>
       <Header />
@@ -16,14 +19,14 @@ export default function Home(): JSX.Element {
           <picture>
             <source
               media="(min-width: 640px)"
-              srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753084364/IMG_1319_n1dbbu.jpg', 2048)} 2048w,
-                ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753084364/IMG_1319_n1dbbu.jpg', 1440)} 1440w`}
+              srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1757150192/KickBackStyles_5_1_ljj6lo.webp', 2048)} 2048w,
+                ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1757150192/KickBackStyles_5_1_ljj6lo.webp', 1440)} 1440w`}
               sizes="2048px"
             />
             <source
               media="(max-width: 639px)"
-              srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753088803/IMG_1312_wselq5.jpg', 767)} 767w,
-                ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753088803/IMG_1312_wselq5.jpg', 480)} 480w`}
+              srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1757149875/kbs_top_emcjac.webp', 767)} 767w,
+                ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1757149875/kbs_top_emcjac.webp', 480)} 480w`}
               sizes="767px"
             />
             <CldImage
@@ -43,10 +46,10 @@ export default function Home(): JSX.Element {
             <h1 className="w-3/5 text-md leading-md text-white sm:w-full sm:text-md-pc">
               @kickbackstyles.official
               <br />
-              2025.07.25 21:00~ Release New Items...!
+              2025.10.18 20:00~ We will dropping new item ...!
               <br />
-              <span className='flex gap-sm sm:gap-xxs items-center mt-md sm:mt-xxs sm:mb-xxxs'><img src='/t-shirt.svg' alt='BackPrintT-Shirt' className='w-[6vw] h-[6vw] sm:w-[2vw] sm:h-[2vw]' />BackPrintT-Shirt</span>
-              <span className='flex gap-sm sm:gap-xxs items-center'><img src='/shorts.svg' alt='NylonShorts' className='w-[6vw] h-[6vw] sm:w-[2vw] sm:h-[2vw]' />NylonShorts</span>
+              <span className='flex gap-sm sm:gap-xxs items-center mt-md sm:mt-xxs sm:mb-xxxs'><img src='/icon-clothes/question.svg' alt='BackPrintT-Shirt' className='w-[6vw] h-[6vw] sm:w-[2vw] sm:h-[2vw]' />Coming soon ...</span>
+              {/* <span className='flex gap-sm sm:gap-xxs items-center'><img src='/shorts.svg' alt='NylonShorts' className='w-[6vw] h-[6vw] sm:w-[2vw] sm:h-[2vw]' />NylonShorts</span> */}
             </h1>
           </div>
         </div>
@@ -97,186 +100,24 @@ export default function Home(): JSX.Element {
         </div>
         <div className="sm:h-5xl sm:w-1/2">
           <ul className="flex flex-nowrap overflow-x-scroll sm:h-full sm:flex-wrap sm:overflow-x-auto">
-            {/* 3アイテム以上 */}
-
-            {/* <li className="relative flex h-[72.8vw] w-[46vw] min-w-[46vw] items-center overflow-hidden border-y-1 border-r-1 border-black bg-white sm:size-1/2 sm:min-w-0"> */}
-
-            {/* 2アイテム */}
-            <li className="relative flex h-[72.8vw] w-1/2 min-w-[46vw] items-center overflow-hidden border-y-1 border-r-1 border-black bg-white sm:size-1/2 sm:min-w-0">
-              <Link
-                href="/items/15"
-                className="group w-full h-full sm:flex  sm:items-center sm:justify-center "
-              >
-                <picture>
-                  <source
-                    media="(min-width: 1024px)"
-                    srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753082082/IMG_1529_vlauak.jpg', 800)} 800w,
-                      ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753082082/IMG_1529_vlauak.jpg', 600)} 600w`}
-                    sizes="800px"
-                  />
-                  <source
-                    media="(min-width: 640px)"
-                    srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753082082/IMG_1529_vlauak.jpg', 600)} 600w,
-                      ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753082082/IMG_1529_vlauak.jpg', 400)} 400w`}
-                    sizes="600px"
-                  />
-                  <CldImage
-                    src={getOptimizedImageUrl(
-                      'https://res.cloudinary.com/dvahtyhva/image/upload/v1753082082/IMG_1529_vlauak.jpg',
-                      400,
-                    )}
-                    width={800}
-                    height={800}
-                    sizes="(max-width: 639px) 100vw, (max-width: 1023px) 600px, 800px"
-                    alt="KickBackStyles BackPrintT-Shirt"
-                    className="h-auto w-full sm:h-auto sm:w-full object-cover sm:group-hover:hidden"
-                    loading="lazy"
-                  />
-                </picture>
-                <div className="hidden size-full overflow-hidden sm:group-hover:block">
-                  <picture>
-                    <source
-                      media="(min-width: 1024px)"
-                      srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753083249/IMG_1482_mx8o4s.jpg', 800)} 800w,
-                        ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753083249/IMG_1482_mx8o4s.jpg', 600)} 600w`}
-                      sizes="800px"
-                    />
-                    <source
-                      media="(min-width: 640px)"
-                      srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753083249/IMG_1482_mx8o4s.jpg', 600)} 600w,
-                        ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753083249/IMG_1482_mx8o4s.jpg', 400)} 400w`}
-                      sizes="600px"
-                    />
-                    <CldImage
-                      src={getOptimizedImageUrl(
-                        'https://res.cloudinary.com/dvahtyhva/image/upload/v1753083249/IMG_1482_mx8o4s.jpg',
-                        400,
-                      )}
-                      width={800}
-                      height={800}
-                      sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
-                      alt="KickBackStyles BackPrintT-Shirt"
-                      className="h-auto w-full object-cover"
-                      loading="lazy"
-                    />
-                  </picture>
-                </div>
-
-                <div className="absolute bottom-xs left-sm">
-                  <p className="text-sm leading-md sm:text-sm-pc sm:group-hover:text-white text-white">
-                    BackPrintT-Shirt
-                  </p>
-                  <div className="flex gap-xxs sm:gap-xxxs">
-                    {/* <p
-                      className="flex items-center border-1 border-black px-xxs text-xs text-black sm:px-xxxs sm:text-xs-pc sm:group-hover:border-white sm:group-hover:text-white"
-                    >
-                      40%off
-                    </p> */}
-
-                    <div>
-                      {/* <p
-                        className='realPrice text-xs text-gray line-through sm:text-xs-pc sm:group-hover:text-white'
-                      >
-                        ¥7,790
-                      </p> */}
-
-                      <p className="leading-[120%]  sm:group-hover:text-white text-white">7,790 JPY</p>
-
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </li>
-            {/* 3アイテム以上 */}
-            {/* <li className="relative flex h-[72.8vw] w-[46vw] min-w-[46vw] items-center overflow-hidden border-y-1 border-r-1 border-black bg-white sm:size-1/2 sm:min-w-0 sm:border-l-1 sm:border-t-0"> */}
-
-            {/* 2アイテム */}
-              <li className="relative flex h-[72.8vw] w-1/2 min-w-[46vw] items-center overflow-hidden border-y-1 border-r-1 border-black bg-white sm:size-1/2 sm:min-w-0 sm:border-l-1 sm:border-t-0"> 
-              <Link
-                href="/items/16"
-                className="group size-full sm:flex sm:items-center sm:justify-center"
-              >
-                <picture>
-                  <source
-                    media="(min-width: 1024px)"
-                    srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753083690/IMG_1526_d1fo7c.jpg', 800)} 800w,
-                      ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753083690/IMG_1526_d1fo7c.jpg', 600)} 600w`}
-                    sizes="800px"
-                  />
-                  <source
-                    media="(min-width: 640px)"
-                    srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753083690/IMG_1526_d1fo7c.jpg', 600)} 600w,
-                      ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753083690/IMG_1526_d1fo7c.jpg', 400)} 400w`}
-                    sizes="600px"
-                  />
-                  <CldImage
-                    src={getOptimizedImageUrl(
-                      'https://res.cloudinary.com/dvahtyhva/image/upload/v1753083690/IMG_1526_d1fo7c.jpg',
-                      400,
-                    )}
-                    width={800}
-                    height={800}
-                    sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
-                    alt="KickBackStyles NylonShorts"
-                    className="h-auto w-full object-cover sm:group-hover:hidden"
-                    loading="lazy"
-                  />
-                </picture>
-                <div className="hidden size-full overflow-hidden sm:group-hover:block">
-                  <picture>
-                    <source
-                      media="(min-width: 1024px)"
-                      srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753083689/IMG_1527_wrbijt.jpg', 800)} 800w,
-                        ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753083689/IMG_1527_wrbijt.jpg', 600)} 600w`}
-                      sizes="800px"
-                    />
-                    <source
-                      media="(min-width: 640px)"
-                      srcSet={`${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753083689/IMG_1527_wrbijt.jpg', 600)} 600w,
-                        ${getOptimizedImageUrl('https://res.cloudinary.com/dvahtyhva/image/upload/v1753083689/IMG_1527_wrbijt.jpg', 400)} 400w`}
-                      sizes="600px"
-                    />
-                    <CldImage
-                      src={getOptimizedImageUrl(
-                        'https://res.cloudinary.com/dvahtyhva/image/upload/v1753083689/IMG_1527_wrbijt.jpg',
-                        400,
-                      )}
-                      width={800}
-                      height={800}
-                      sizes="(max-width: 639px) 46vw, (max-width: 1023px) 600px, 800px"
-                      alt="KickBackStyles ナイロンショーツ"
-                      className="object-cover sm:h-auto sm:w-full"
-                      loading="lazy"
-                    />
-                  </picture>
-                </div>
-
-                <div className="absolute bottom-xs left-sm ">
-                  <p className="text-sm leading-md sm:text-sm-pc sm:group-hover:text-white text-white">
-                    NylonShorts
-                  </p>
-                  <div className="flex gap-xxs sm:gap-xxxs">
-                      {/* <p
-                        className="flex items-center border-1 border-black px-xxs text-xs text-black sm:px-xxxs sm:text-xs-pc sm:group-hover:border-white sm:group-hover:text-white"
-                      >
-                        40%off
-                      </p> */}
-
-                    <div>
-                      {/* <p
-                        className='realPrice text-xs text-gray line-through sm:text-xs-pc sm:group-hover:text-white'
-                      >
-                        ¥7,790
-                      </p> */}
-
-                      <p className="leading-[120%]  sm:group-hover:text-white text-white">5,650 JPY</p>
-
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </li>
-           
+            <ItemCard
+              itemCount="two"
+              href="/items/15"
+              mainImage="https://res.cloudinary.com/dvahtyhva/image/upload/v1753082082/IMG_1529_vlauak.jpg"
+              hoverImage="https://res.cloudinary.com/dvahtyhva/image/upload/v1753083249/IMG_1482_mx8o4s.jpg"
+              alt="KickBackStyles BackPrintT-Shirt"
+              title="BackPrintT-Shirt"
+              price="7,790 JPY"
+            />
+            <ItemCard
+              itemCount="two"
+              href="/items/16"
+              mainImage="https://res.cloudinary.com/dvahtyhva/image/upload/v1753083690/IMG_1526_d1fo7c.jpg"
+              hoverImage="https://res.cloudinary.com/dvahtyhva/image/upload/v1753083689/IMG_1527_wrbijt.jpg"
+              alt="KickBackStyles NylonShorts"
+              title="NylonShorts"
+              price="5,650 JPY"
+            />
           </ul>
         </div>
       </div>
